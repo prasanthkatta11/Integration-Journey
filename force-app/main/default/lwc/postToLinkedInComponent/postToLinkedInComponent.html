@@ -1,0 +1,22 @@
+<template>
+    <lightning-card class="slds-var-p-around_large">
+        <div class="slds-text-align_center">
+            <h1 class="slds-text-heading_large slds-text-title_bold">LINKEDIN POST</h1>
+        </div>
+        <div class="slds-var-p-around_large">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_9-of-12">
+                    <lightning-textarea label="Enter your LinkedIn post:" value={message}
+                        placeholder="Enter the text to post on LinkedIn" onchange={handleMessageChange} required="true">
+                    </lightning-textarea>
+                    <p class="slds-text-color_error" style="font-size: 14px; margin-top: 4px;" if:true={showError}>
+                        Please enter a message in the text area before posting.
+                    </p>
+                </div>
+                <div class="slds-col slds-size_3-of-12 slds-align-bottom">
+                    <lightning-button label="Post to LinkedIn" onclick={handlePost} variant="brand"></lightning-button>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

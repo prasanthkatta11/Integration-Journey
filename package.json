@@ -27,7 +27,7 @@
     "eslint-plugin-jest": "^27.6.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.1.0",
-    "prettier": "^3.1.0",
+    "prettier": "^3.3.3",
     "prettier-plugin-apex": "^2.0.1"
   },
   "lint-staged": {
@@ -37,5 +37,9 @@
     "**/{aura,lwc}/**/*.js": [
       "eslint"
     ]
-  }
+  },
+  "main": "jest.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
