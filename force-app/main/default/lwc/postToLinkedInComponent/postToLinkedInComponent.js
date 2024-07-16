@@ -5,18 +5,30 @@ import POSTTOLINKEDIN from "@salesforce/apex/LinkedInIntegration.postToLinkedIn"
 export default class PostToLinkedInComponent extends LightningElement {
   message = "";
   showError = false;
+  textareaClass = "";
+  isModalOpen = false;
 
   handleMessageChange(event) {
     this.message = event.target.value;
     this.showError = false;
+    this.textareaClass = "";
   }
 
-  async handlePost() {
+  handlePost() {
     if (!this.message.trim()) {
       this.showError = true;
+      this.textareaClass = "slds-has-error";
       return;
     }
+    this.isModalOpen = true;
+  }
 
+  handleModalClose() {
+    this.isModalOpen = false;
+  }
+
+  async handleModalPost() {
+    this.isModalOpen = false;
     try {
       const result = await POSTTOLINKEDIN({ message: this.message });
       this.message = "";
@@ -24,7 +36,7 @@ export default class PostToLinkedInComponent extends LightningElement {
         "Success",
         "Your message has been posted to LinkedIn.",
         "success",
-        "dismissable"
+        "sticky"
       );
       console.log(
         "🚀 ~ PostToLinkedInComponent ~ handlePost ~ result:",
@@ -35,7 +47,7 @@ export default class PostToLinkedInComponent extends LightningElement {
         "Error",
         "There was an error posting to LinkedIn.",
         "error",
-        "dismissable"
+        "sticky"
       );
     }
   }
