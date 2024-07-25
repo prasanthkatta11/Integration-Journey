@@ -105,29 +105,79 @@ global without sharing class WhatsAppRest {
               ? message.image.id
               : null;
             salesforceMessage.Image_Type__c = message.image != null
-              ? message.image.mime_type
+              ? message.image.mime_typex
               : null;
             salesforceMessage.Image_SHA256__c = message.image != null
               ? message.image.sha256
               : null;
 
-            // //If message is Video
-            // salesforceMessage.VideoId__c = message.video != null
-            //   ? message.video.id
-            //   : null;
-            // salesforceMessage.VideoType__c = message.video != null
-            //   ? message.video.mime_type
-            //   : null;
-            // salesforceMessage.VideoSHA256__c = message.video != null
-            //   ? message.video.sha256
-            //   : null;
+            // If message is a reaction
+            salesforceMessage.Reaction__c = message.reaction != null &&
+              message.typex == 'reaction'
+              ? message.reaction.emoji
+              : null;
+            salesforceMessage.Parent_Message_ID__c = message.reaction != null &&
+              message.typex == 'reaction'
+              ? message.reaction.message_id
+              : salesforceMessage.Parent_Message_ID__c;
 
-            //If the message is reply to another message
-            salesforceMessage.Parent_Message_ID__c = message.context != null
-              ? message.context.id
+            // If message is a document
+            salesforceMessage.Document_ID__c = message.document != null
+              ? message.document.id
+              : null;
+            salesforceMessage.Document_Type__c = message.document != null
+              ? message.document.mime_typex
+              : null;
+            salesforceMessage.Document_SHA256__c = message.document != null
+              ? message.document.sha256
+              : null;
+            salesforceMessage.Document_Filename__c = message.document != null
+              ? message.document.filename
               : null;
 
+            String mediaId = message.document != null
+              ? message.document.id
+              : null;
+
+            // If the message is a reply to another message
+            salesforceMessage.Parent_Message_ID__c = message.context != null
+              ? message.context.id
+              : salesforceMessage.Parent_Message_ID__c;
+
+            System.debug('Parent ID ' + salesforceMessage.Parent_Message_ID__c);
+
             upsert salesforceMessage Message_ID__c;
+
+            if (message.document != null) {
+              WhatsApp_Media_Event__e mediaEvent = new WhatsApp_Media_Event__e();
+              mediaEvent.MediaId__c = message.document.id;
+              mediaEvent.RecordId__c = salesforceMessage.Id;
+              mediaEvent.Customer_Phone_Number__c = null;
+              Database.SaveResult sr = EventBus.publish(mediaEvent);
+
+              if (sr.isSuccess()) {
+                System.debug('Event published successfully: ' + sr.getId());
+              } else {
+                System.debug(
+                  'Failed to publish event: ' + sr.getErrors()[0].getMessage()
+                );
+              }
+            } else {
+              // When the document is not present, still publish an event with different or minimal details
+              WhatsApp_Media_Event__e mediaEvent = new WhatsApp_Media_Event__e();
+              mediaEvent.MediaId__c = null; // Explicitly set to null or some placeholder if needed
+              mediaEvent.RecordId__c = salesforceMessage.Id;
+              mediaEvent.Customer_Phone_Number__c = salesforceMessage.Customer_Phone__c;
+              Database.SaveResult sr = EventBus.publish(mediaEvent);
+
+              if (sr.isSuccess()) {
+                System.debug('Event published successfully: ' + sr.getId());
+              } else {
+                System.debug(
+                  'Failed to publish event: ' + sr.getErrors()[0].getMessage()
+                );
+              }
+            }
           }
         }
       } else {

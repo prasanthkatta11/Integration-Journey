@@ -1,0 +1,46 @@
+/* .custom-button.border-filled {
+  --slds-c-button-brand-color-background: var(--lwc-color-background-row-new);
+  --slds-c-button-brand-color-background-hover: var(
+    --lwc-color-background-row-new
+  );
+  --slds-c-button-brand-color-border: var(--lwc-color-background-row-new);
+  --slds-c-button-brand-color-border-hover: var(--lwc-color-background-row-new);
+  --slds-c-button-brand-text-color: var(--lwc-color-text-icon-default);
+} */
+
+/* .btnIconOverlay {
+  position: absolute;
+  z-index: 1;
+  margin: 0% 0px 0px 88%;
+} */
+
+:host {
+  --slds-c-button-brand-color-background: #ff5d2d;
+  --slds-c-button-brand-color-border: #ff5d2d;
+  --slds-c-button-brand-color-background-hover: #ff5d2d;
+  --slds-c-button-brand-color-border-hover: #ff5d2d;
+}
+
+.buttonIcon {
+  --slds-c-button-color-background: #ff5d2d;
+  --slds-c-button-color-border-hover: #ff5d2d;
+  --slds-c-button-color-border: #ff5d2d;
+}
+
+.footer {
+  background-color: #ff5d2d;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 20px; /* Adjust padding as needed */
+  text-align: center; /* Center-align text */
+  width: 100%; /* Make sure the footer spans the full width */
+  box-sizing: border-box;
+}
+
+.footer a {
+  color: white; /* Set link color to white */
+  text-decoration: none; /* Remove underline from links */
+  width: 100%;
+  box-sizing: border-box;
+}

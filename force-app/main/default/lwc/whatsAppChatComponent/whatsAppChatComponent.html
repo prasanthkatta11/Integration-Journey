@@ -1,0 +1,126 @@
+<template>
+    <lightning-card variant="Narrow">
+
+        <!-- Actions slot for buttons -->
+        <div slot="actions">
+            <template if:true={showChat}>
+                <lightning-button class="custom-button" label="End Chat" title="Chat with another customer"
+                    variant="brand" onclick={handleAnotherChat}></lightning-button>
+            </template>
+        </div>
+
+        <!-- Spinner -->
+        <template if:true={showSpinner}>
+            <div class="slds-spinner_container">
+                <lightning-spinner variant="brand" alternative-text="Loading" size="small"></lightning-spinner>
+            </div>
+        </template>
+
+        <!-- Phone and Button -->
+        <template if:true={showPhoneAndButton}>
+            <div class="slds-var-p-around_small">
+                <p>
+                    <lightning-input class="phone-Input" type="tel" placeholder="Enter Customer Phone number"
+                        label="Enter your message" variant="label-hidden" required
+                        message-when-value-missing="Please enter customer phone number to open chat"
+                        onchange={handlePhoneChange}></lightning-input>
+                </p>
+                <p class="slds-var-m-top_x-small">
+                    <lightning-button variant="brand" label="Start Chatting" onclick={handleChat}></lightning-button>
+                </p>
+            </div>
+        </template>
+
+        <!-- Chat messages -->
+        <template if:true={showChat}>
+            <section role="log" class="slds-chat slds-scrollable_y chatArea" style="height: 300px">
+                <ul class="slds-chat-list">
+                    <template for:each={messages} for:item="message">
+                        <template if:true={message.Outgoing__c}>
+                            <li key={message.Id} class="slds-chat-listitem slds-chat-listitem_outbound">
+                                <div class="slds-chat-message">
+                                    <span aria-hidden="true" class="slds-avatar slds-avatar_circle slds-chat-avatar">
+                                        <abbr class="slds-avatar__initials slds-icon-standard-user"
+                                            title={message.Agent_Name__c}>{message.agentInitials}</abbr>
+                                    </span>
+                                    <div class="slds-chat-message__body">
+                                        <div class="slds-chat-message__text slds-chat-message__text_outbound">
+                                            <lightning-formatted-rich-text
+                                                value={message.Message_Content__c}></lightning-formatted-rich-text>
+                                        </div>
+                                        <div class="slds-chat-message__meta">
+                                            {message.Agent_Name__c} - <lightning-formatted-date-time
+                                                value={message.CreatedDate} year="2-digit" month="short" day="2-digit"
+                                                hour="numeric" minute="2-digit"
+                                                weekday="long"></lightning-formatted-date-time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </template>
+                        <template if:false={message.Outgoing__c}>
+                            <li key={message.Id} class="slds-chat-listitem slds-chat-listitem_inbound">
+                                <div class="slds-chat-message">
+                                    <span aria-hidden="true" class="slds-avatar slds-avatar_circle slds-chat-avatar">
+                                        <abbr class="slds-avatar__initials slds-avatar__initials_inverse"
+                                            title="Customer">C</abbr>
+                                    </span>
+                                    <div class="slds-chat-message__body">
+                                        <div class="slds-chat-message__text slds-chat-message__text_inbound">
+                                            <lightning-formatted-rich-text
+                                                value={message.Message_Content__c}></lightning-formatted-rich-text>
+                                        </div>
+                                        <div class="slds-chat-message__meta">
+                                            {message.Customer_Name__c} - <lightning-formatted-date-time
+                                                value={message.CreatedDate} year="2-digit" month="short" day="2-digit"
+                                                hour="numeric" minute="2-digit"
+                                                weekday="long"></lightning-formatted-date-time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </template>
+                    </template>
+                </ul>
+            </section>
+
+            <!-- Chat image, input and Send button -->
+            <div class="slds-grid slds-wrap slds-var-p-around_xx-small">
+                <div class="slds-col slds-large-size_1-of-12 slds-medium-size_1-of-12 slds-size_1-of-12">
+                    <span class="slds-icon_container slds-icon-utility-end_chat slds-chat-icon">
+                        <lightning-icon icon-name='standard:live_chat' alternative-text='live_chat' size='medium'
+                            title='live_chat'></lightning-icon>
+                    </span>
+                </div>
+                <div
+                    class="slds-col slds-large-size_10-of-12 slds-medium-size_1-of-12 slds-size_1-of-12 slds-var-p-left_xx-small">
+                    <span>
+                        <lightning-input class="chat-Input" type="text" value={messageText}
+                            placeholder="Enter Chat message" label="Enter your message" variant="label-hidden"
+                            onchange={handleChange} required
+                            message-when-value-missing="Enter a valid message to send"></lightning-input>
+                    </span>
+                </div>
+                <div
+                    class="slds-col slds-large-size_1-of-12 slds-medium-size_1-of-12 slds-size_1-of-12 slds-var-p-right_xx-small">
+                    <span>
+                        <lightning-button-icon icon-name='utility:send' class="buttonIcon" alternative-text='send'
+                            size='medium' title='send' onclick={handleSendMessage}>
+                        </lightning-button-icon>
+                    </span>
+                </div>
+            </div>
+        </template>
+
+        <!-- Footer -->
+        <div class="footer-container">
+            <div slot="footer" class="footer">
+                Empowering conversations with
+                <a href="http://passion-led-me-here-dev-ed.trailblaze.my.site.com/PortfolioVoyage/s/" target="_blank"
+                    aria-label="PK"> Passion
+                </a>
+            </div>
+        </div>
+
+    </lightning-card>
+</template>

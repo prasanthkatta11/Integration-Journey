@@ -1,5 +1,6 @@
 public class WhatsAppRestWrapperClass {
   public entry[] entry;
+
   public class entry {
     public String id;
     public changes[] changes;
@@ -40,6 +41,8 @@ public class WhatsAppRestWrapperClass {
     public String typex;
     public image image;
     public image video;
+    public reaction reaction;
+    public document document;
   }
 
   public class context {
@@ -52,8 +55,20 @@ public class WhatsAppRestWrapperClass {
   }
 
   public class image {
-    public String mime_type;
+    public String mime_typex;
     public String id;
     public String sha256;
+  }
+
+  public class reaction {
+    public string emoji;
+    public string message_id;
+  }
+
+  public class document {
+    public String filename; //Coles_Low_Rate_Mastercard_4376_14072024.pdf
+    public String mime_typex; //application/pdf
+    public String sha256; //ItRn/nnLuWF4IMn1Ug8/3JzSwtO88cZm8gAPTQV8ank=
+    public String id; //1030874228432134
   }
 }
