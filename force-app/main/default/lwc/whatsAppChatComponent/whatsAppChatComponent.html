@@ -3,25 +3,25 @@
 
         <!-- Actions slot for buttons -->
         <div slot="actions">
-            <template if:true={showChat}>
+            <template lwc:if={showChat}>
                 <lightning-button class="custom-button" label="End Chat" title="Chat with another customer"
                     variant="brand" onclick={handleAnotherChat}></lightning-button>
             </template>
         </div>
 
         <!-- Spinner -->
-        <template if:true={showSpinner}>
+        <template lwc:if={showSpinner}>
             <div class="slds-spinner_container">
                 <lightning-spinner variant="brand" alternative-text="Loading" size="small"></lightning-spinner>
             </div>
         </template>
 
         <!-- Phone and Button -->
-        <template if:true={showPhoneAndButton}>
+        <template lwc:if={showPhoneAndButton}>
             <div class="slds-var-p-around_small">
                 <p>
                     <lightning-input class="phone-Input" type="tel" placeholder="Enter Customer Phone number"
-                        label="Enter your message" variant="label-hidden" required
+                        label="Enter Customer Number" value={phone} variant="label-hidden" name="phone" required
                         message-when-value-missing="Please enter customer phone number to open chat"
                         onchange={handlePhoneChange}></lightning-input>
                 </p>
@@ -32,11 +32,11 @@
         </template>
 
         <!-- Chat messages -->
-        <template if:true={showChat}>
+        <template lwc:if={showChat}>
             <section role="log" class="slds-chat slds-scrollable_y chatArea" style="height: 300px">
                 <ul class="slds-chat-list">
                     <template for:each={messages} for:item="message">
-                        <template if:true={message.Outgoing__c}>
+                        <template lwc:if={message.Outgoing__c}>
                             <li key={message.Id} class="slds-chat-listitem slds-chat-listitem_outbound">
                                 <div class="slds-chat-message">
                                     <span aria-hidden="true" class="slds-avatar slds-avatar_circle slds-chat-avatar">
@@ -58,7 +58,7 @@
                                 </div>
                             </li>
                         </template>
-                        <template if:false={message.Outgoing__c}>
+                        <template lwc:else>
                             <li key={message.Id} class="slds-chat-listitem slds-chat-listitem_inbound">
                                 <div class="slds-chat-message">
                                     <span aria-hidden="true" class="slds-avatar slds-avatar_circle slds-chat-avatar">
@@ -86,23 +86,23 @@
 
             <!-- Chat image, input and Send button -->
             <div class="slds-grid slds-wrap slds-var-p-around_xx-small">
-                <div class="slds-col slds-large-size_1-of-12 slds-medium-size_1-of-12 slds-size_1-of-12">
+                <div class="slds-col slds-size_1-of-12 slds-medium-size_1-of-12 slds-large-size_1-of-12">
                     <span class="slds-icon_container slds-icon-utility-end_chat slds-chat-icon">
                         <lightning-icon icon-name='standard:live_chat' alternative-text='live_chat' size='medium'
                             title='live_chat'></lightning-icon>
                     </span>
                 </div>
                 <div
-                    class="slds-col slds-large-size_10-of-12 slds-medium-size_1-of-12 slds-size_1-of-12 slds-var-p-left_xx-small">
+                    class="slds-col slds-size_10-of-12 slds-medium-size_10-of-12 slds-large-size_10-of-12 slds-var-p-left_xx-small">
                     <span>
                         <lightning-input class="chat-Input" type="text" value={messageText}
                             placeholder="Enter Chat message" label="Enter your message" variant="label-hidden"
-                            onchange={handleChange} required
+                            onchange={handleChange} required name="chat"
                             message-when-value-missing="Enter a valid message to send"></lightning-input>
                     </span>
                 </div>
                 <div
-                    class="slds-col slds-large-size_1-of-12 slds-medium-size_1-of-12 slds-size_1-of-12 slds-var-p-right_xx-small">
+                    class="slds-col slds-size_1-of-12 slds-medium-size_1-of-12 slds-large-size_1-of-12 slds-var-p-right_xx-small">
                     <span>
                         <lightning-button-icon icon-name='utility:send' class="buttonIcon" alternative-text='send'
                             size='medium' title='send' onclick={handleSendMessage}>

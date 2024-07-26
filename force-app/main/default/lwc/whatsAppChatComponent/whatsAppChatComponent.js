@@ -257,10 +257,6 @@ export default class WhatsAppChatComponent extends LightningElement {
         .then((result) => {
           console.log("SENDTEXTMESSAGE result:", result);
           this.messages = [...this.messages, result];
-          console.log(
-            "🚀 ~ WhatsAppChatComponent ~ .then ~ this.messages:",
-            this.messages
-          );
         })
         .catch((error) => {
           this.error = error;
@@ -281,7 +277,7 @@ export default class WhatsAppChatComponent extends LightningElement {
   }
 
   handleValidate() {
-    const phoneInput = this.template.querySelector("lightning-input");
+    const phoneInput = this.template.querySelector(".phone-Input");
     // If there is no phone input, return true (assuming this is not expected)
     if (!phoneInput) {
       return true;
