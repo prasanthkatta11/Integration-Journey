@@ -17,12 +17,191 @@ export default class WhatsAppChatComponent extends LightningElement {
   showPhoneAndButton = true;
   phone;
   messageText = "";
-
   queryString;
 
   channelName = "/event/WhatsApp_Media_Event__e";
 
   subscription = {};
+
+  handlePhoneChange(event) {
+    event.preventDefault();
+    this.phone = event.target.value;
+    console.log(
+      "🚀 ~ WhatsAppChatComponent ~ handlePhoneChange ~ this.phone:",
+      this.phone
+    );
+  }
+
+  handleChat(event) {
+    if (event) {
+      event.preventDefault();
+    }
+    if (this.handleValidate()) {
+      this.handleListAllMessages();
+    }
+  }
+
+  handleChange(event) {
+    event.preventDefault();
+    this.messageText = event.target.value;
+    console.log("Message text changed:", this.messageText);
+  }
+
+  handleAnotherChat() {
+    this.showPhoneAndButton = true;
+    this.showChat = false;
+    this.phone = "";
+    this.messageText = "";
+    this.messages = [];
+    this.isRendered = false;
+  }
+
+  handleValidate() {
+    const phoneInput = this.template.querySelector(".phone-Input");
+    // If there is no phone input, return true (assuming this is not expected)
+    if (!phoneInput) {
+      return true;
+    }
+
+    // If the phone number is invalid, set custom validity and return false
+    if (this.phone && !this.isValidAustralianPhoneNumber(this.phone)) {
+      phoneInput.setCustomValidity(
+        "Please enter a valid Australian phone number"
+      );
+      phoneInput.reportValidity();
+      return false;
+    }
+    // If the phone number is valid, clear the custom validity
+    phoneInput.setCustomValidity("");
+
+    return [
+      ...this.template.querySelectorAll("lightning-input, lightning-textarea")
+    ].reduce((validSoFar, inputCmp) => {
+      inputCmp.reportValidity();
+      return validSoFar && inputCmp.checkValidity();
+    }, true);
+  }
+
+  isValidAustralianPhoneNumber(phone) {
+    // Regular expression to match Australian phone numbers
+    const australianPhonePattern = /^(\+61|61)?\d{9}$/;
+    const isValid = australianPhonePattern.test(phone);
+    console.log("Is phone number valid:", isValid);
+    return isValid;
+  }
+
+  //Get the agent Name and return the initials
+  getInitials(name) {
+    if (!name) return "";
+    const names = name.split(" ");
+    if (names.length === 1) {
+      return names[0].charAt(0).toUpperCase();
+    }
+    return names.map((n) => n.charAt(0).toUpperCase()).join("");
+  }
+
+  chatArea() {
+    let chatArea = this.template.querySelector(".chatArea");
+    if (chatArea) {
+      chatArea.scrollTop = chatArea.scrollHeight;
+    }
+  }
+
+  renderedCallback() {
+    if (this.isRendered) {
+      return;
+    }
+    this.isRendered = true;
+    this.setUpChatMessage();
+  }
+
+  setUpChatMessage() {
+    console.log("Setting up chat message event listener");
+    let chatInput = this.template.querySelector(".chat-Input");
+    let phoneInputScreen = this.template.querySelector(".phone-Input");
+
+    if (chatInput) {
+      chatInput.addEventListener("keydown", (event) => {
+        console.log(`Enent handler added`);
+        if (event.key === "Enter") {
+          event.preventDefault();
+          this.handleSendMessage();
+        }
+      });
+    }
+
+    if (phoneInputScreen) {
+      phoneInputScreen.addEventListener("keydown", (event) => {
+        console.log(`Enent handler added`);
+        if (event.key === "Enter") {
+          event.preventDefault();
+          this.handleChat();
+        }
+      });
+    }
+  }
+
+  handleListAllMessages() {
+    this.showSpinner = true;
+    LISTALLMESSAGES({ customerPhone: this.phone })
+      .then((result) => {
+        console.log("🚀 ~ Validation passed, calling LISTALLMESSAGES");
+        this.messages = result.map((item) => {
+          return {
+            ...item,
+            initials: item.Outgoing__c
+              ? this.getInitials(item.Agent_Name__c)
+              : this.getInitials(item.Customer_Name__c)
+          };
+        });
+        this.showChat = true;
+        this.showPhoneAndButton = false;
+      })
+      .catch((error) => {
+        this.error = error;
+        this.showChat = false;
+        this.showPhoneAndButton = true;
+        console.log(error);
+      })
+      .finally(() => {
+        this.chatArea();
+        this.showSpinner = false;
+        this.setUpChatMessage();
+      });
+  }
+
+  handleSendMessage() {
+    console.log("Handle send message triggered");
+    if (this.handleValidate() && this.messageText.trim()) {
+      console.log("Validation passed, calling SENDTEXTMESSAGE");
+      this.showSpinner = true;
+      SENDTEXTMESSAGE({
+        messageContent: this.messageText,
+        toPhoneNumber: this.phone
+      })
+        .then((result) => {
+          console.log("SENDTEXTMESSAGE result:", result);
+          this.messages = [
+            ...this.messages,
+            {
+              ...result,
+              initials: result.Outgoing__c
+                ? this.getInitials(result.Agent_Name__c)
+                : this.getInitials(result.Customer_Name__c)
+            }
+          ];
+        })
+        .catch((error) => {
+          this.error = error;
+          this.showChat = false;
+        })
+        .finally(() => {
+          this.chatArea();
+          this.messageText = "";
+          this.showSpinner = false;
+        });
+    }
+  }
 
   connectedCallback() {
     console.log("Connected Callback - RecordId:", this.recordId);
@@ -118,7 +297,16 @@ export default class WhatsAppChatComponent extends LightningElement {
         })
           .then((result) => {
             console.log("GETINCOMINGMESSAGE result:", result);
-            this.messages = [...this.messages, result];
+            // Process the result as a single object
+            this.messages = [
+              ...this.messages,
+              {
+                ...result,
+                initials: result.Outgoing__c
+                  ? this.getInitials(result.Agent_Name__c)
+                  : this.getInitials(result.Customer_Name__c)
+              }
+            ];
             console.log(
               "🚀 ~ WhatsAppChatComponent ~ .then ~ this.messages:",
               this.messages
@@ -144,180 +332,5 @@ export default class WhatsAppChatComponent extends LightningElement {
       );
       this.subscription = response;
     });
-  }
-
-  chatArea() {
-    let chatArea = this.template.querySelector(".chatArea");
-    if (chatArea) {
-      chatArea.scrollTop = chatArea.scrollHeight;
-    }
-  }
-
-  //Get the agent Name and return the initials
-  getInitials(name) {
-    if (!name) return "";
-    const names = name.split(" ");
-    if (names.length === 1) {
-      return names[0].charAt(0).toUpperCase();
-    }
-    return names.map((n) => n.charAt(0).toUpperCase()).join("");
-  }
-
-  handlePhoneChange(event) {
-    event.preventDefault();
-    this.phone = event.target.value;
-    console.log(
-      "🚀 ~ WhatsAppChatComponent ~ handlePhoneChange ~ this.phone:",
-      this.phone
-    );
-  }
-
-  handleChat(event) {
-    if (event) {
-      event.preventDefault();
-    }
-    if (this.handleValidate()) {
-      this.handleListAllMessages();
-    }
-  }
-
-  handleListAllMessages() {
-    this.showSpinner = true;
-    LISTALLMESSAGES({ customerPhone: this.phone })
-      .then((result) => {
-        console.log("🚀 ~ Validation passed, calling LISTALLMESSAGES");
-
-        this.messages = result.map((item) => {
-          return {
-            ...item,
-            agentInitials: item.Outgoing__c
-              ? this.getInitials(item.Agent_Name__c)
-              : ""
-          };
-        });
-        this.showChat = true;
-        this.showPhoneAndButton = false;
-      })
-      .catch((error) => {
-        this.error = error;
-        this.showChat = false;
-        this.showPhoneAndButton = true;
-        console.log(error);
-      })
-      .finally(() => {
-        this.chatArea();
-        this.showSpinner = false;
-        this.setUpChatMessage();
-      });
-  }
-
-  renderedCallback() {
-    if (this.isRendered) {
-      return;
-    }
-    this.isRendered = true;
-    this.setUpChatMessage();
-  }
-
-  setUpChatMessage() {
-    console.log("Setting up chat message event listener");
-    let chatInput = this.template.querySelector(".chat-Input");
-    let phoneInputScreen = this.template.querySelector(".phone-Input");
-
-    if (chatInput) {
-      chatInput.addEventListener("keydown", (event) => {
-        console.log(`Enent handler added`);
-        if (event.key === "Enter") {
-          event.preventDefault();
-          this.handleSendMessage();
-        }
-      });
-    }
-
-    if (phoneInputScreen) {
-      phoneInputScreen.addEventListener("keydown", (event) => {
-        console.log(`Enent handler added`);
-        if (event.key === "Enter") {
-          event.preventDefault();
-          this.handleChat();
-        }
-      });
-    }
-  }
-
-  handleSendMessage() {
-    console.log("Handle send message triggered");
-    if (this.handleValidate()) {
-      console.log("Validation passed, calling SENDTEXTMESSAGE");
-      this.showSpinner = true;
-      SENDTEXTMESSAGE({
-        messageContent: this.messageText,
-        toPhoneNumber: this.phone
-      })
-        .then((result) => {
-          console.log("SENDTEXTMESSAGE result:", result);
-          this.messages = [...this.messages, result];
-        })
-        .catch((error) => {
-          this.error = error;
-          this.showChat = false;
-        })
-        .finally(() => {
-          this.chatArea();
-          this.messageText = "";
-          this.showSpinner = false;
-        });
-    }
-  }
-
-  handleChange(event) {
-    event.preventDefault();
-    this.messageText = event.target.value;
-    console.log("Message text changed:", this.messageText);
-  }
-
-  handleValidate() {
-    const phoneInput = this.template.querySelector(".phone-Input");
-    // If there is no phone input, return true (assuming this is not expected)
-    if (!phoneInput) {
-      return true;
-    }
-
-    // If the phone number is invalid, set custom validity and return false
-    if (this.phone && !this.isValidAustralianPhoneNumber(this.phone)) {
-      phoneInput.setCustomValidity(
-        "Please enter a valid Australian phone number"
-      );
-      phoneInput.reportValidity();
-      return false;
-    }
-
-    // If the phone number is valid, clear the custom validity
-    phoneInput.setCustomValidity("");
-
-    return [...this.template.querySelectorAll("lightning-input")].reduce(
-      (validSoFar, inputCmp) => {
-        inputCmp.reportValidity();
-        return validSoFar && inputCmp.checkValidity();
-      },
-      true
-    );
-  }
-
-  isValidAustralianPhoneNumber(phone) {
-    // Regular expression to match Australian phone numbers
-    const australianPhonePattern = /^(\+61|61)?\d{9}$/;
-    const isValid = australianPhonePattern.test(phone);
-    console.log("Is phone number valid:", isValid);
-    return isValid;
-  }
-
-  handleAnotherChat() {
-    this.showPhoneAndButton = true;
-    this.showChat = false;
-    this.phone = "";
-    this.messageText = "";
-    this.messages = [];
-    this.isRendered = false;
   }
 }

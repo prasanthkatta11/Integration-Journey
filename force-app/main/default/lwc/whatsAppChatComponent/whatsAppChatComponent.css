@@ -35,11 +35,27 @@
     margin-bottom: 0.5rem;
   }
 
-  .chat-Input {
-    height: 3rem; /* Increase height for better mobile usability */
+  .buttonIcon {
+    display: flex;
+    vertical-align: center;
+    justify-content: center;
+  }
+
+  .slds-align-middle {
+    display: flex;
+    align-items: center;
+  }
+
+  .slds-vertical-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
   }
 
   .buttonIcon {
-    font-size: 2rem; /* Increase button size for better touch interaction */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

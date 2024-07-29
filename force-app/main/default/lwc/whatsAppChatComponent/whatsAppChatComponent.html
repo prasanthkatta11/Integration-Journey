@@ -31,7 +31,7 @@
             </div>
         </template>
 
-        <!-- Chat messages -->
+        <!-- Chat messages Outbound -->
         <template lwc:if={showChat}>
             <section role="log" class="slds-chat slds-scrollable_y chatArea" style="height: 300px">
                 <ul class="slds-chat-list">
@@ -41,7 +41,7 @@
                                 <div class="slds-chat-message">
                                     <span aria-hidden="true" class="slds-avatar slds-avatar_circle slds-chat-avatar">
                                         <abbr class="slds-avatar__initials slds-icon-standard-user"
-                                            title={message.Agent_Name__c}>{message.agentInitials}</abbr>
+                                            title={message.Agent_Name__c}>{message.initials}</abbr>
                                     </span>
                                     <div class="slds-chat-message__body">
                                         <div class="slds-chat-message__text slds-chat-message__text_outbound">
@@ -58,12 +58,14 @@
                                 </div>
                             </li>
                         </template>
+
+                        <!-- Chat messages Inbound -->
                         <template lwc:else>
                             <li key={message.Id} class="slds-chat-listitem slds-chat-listitem_inbound">
                                 <div class="slds-chat-message">
                                     <span aria-hidden="true" class="slds-avatar slds-avatar_circle slds-chat-avatar">
                                         <abbr class="slds-avatar__initials slds-avatar__initials_inverse"
-                                            title="Customer">C</abbr>
+                                            title={message.Customer_Name__c}>{message.initials}</abbr>
                                     </span>
                                     <div class="slds-chat-message__body">
                                         <div class="slds-chat-message__text slds-chat-message__text_inbound">
@@ -84,30 +86,29 @@
                 </ul>
             </section>
 
-            <!-- Chat image, input and Send button -->
-            <div class="slds-grid slds-wrap slds-var-p-around_xx-small">
-                <div class="slds-col slds-size_1-of-12 slds-medium-size_1-of-12 slds-large-size_1-of-12">
-                    <span class="slds-icon_container slds-icon-utility-end_chat slds-chat-icon">
-                        <lightning-icon icon-name='standard:live_chat' alternative-text='live_chat' size='medium'
-                            title='live_chat'></lightning-icon>
-                    </span>
-                </div>
-                <div
-                    class="slds-col slds-size_10-of-12 slds-medium-size_10-of-12 slds-large-size_10-of-12 slds-var-p-left_xx-small">
-                    <span>
-                        <lightning-input class="chat-Input" type="text" value={messageText}
-                            placeholder="Enter Chat message" label="Enter your message" variant="label-hidden"
-                            onchange={handleChange} required name="chat"
-                            message-when-value-missing="Enter a valid message to send"></lightning-input>
-                    </span>
-                </div>
-                <div
-                    class="slds-col slds-size_1-of-12 slds-medium-size_1-of-12 slds-large-size_1-of-12 slds-var-p-right_xx-small">
-                    <span>
-                        <lightning-button-icon icon-name='utility:send' class="buttonIcon" alternative-text='send'
-                            size='medium' title='send' onclick={handleSendMessage}>
-                        </lightning-button-icon>
-                    </span>
+            <!-- Chat Icon, Input and Button -->
+            <div>
+                <lightning-icon icon-name="standard:live_chat" alternative-text="live_chat" size="small" title=""
+                    aria-hidden="true"></lightning-icon>
+                <div class="slds-grid slds-wrap">
+                    <p class="slds-col slds-size_11-of-12 slds-medium-size_11-of-12 slds-large-size_11-of-12 
+                     slds-flex slds-align-middle slds-vertical-align">
+                        <span>
+                            <lightning-textarea class="chat-Input" type="text" value={messageText}
+                                placeholder="Enter Chat message" label="Enter your message" variant="label-hidden"
+                                onchange={handleChange} name="chat"
+                                message-when-value-missing="Enter a valid message to send" required>
+                            </lightning-textarea>
+                        </span>
+                    </p>
+                    <p class="slds-col slds-size_1-of-12 slds-medium-size_1-of-12 slds-large-size_1-of-12 
+                    slds-var-p-right_xx-small slds-flex slds-align-middle slds-vertical-align">
+                        <span>
+                            <lightning-button-icon icon-name="utility:send" class="buttonIcon" alternative-text="send"
+                                size='large' title="send" onclick={handleSendMessage}>
+                            </lightning-button-icon>
+                        </span>
+                    </p>
                 </div>
             </div>
         </template>
