@@ -1,0 +1,86 @@
+<template>
+    <lightning-card title="GRAPHQL"
+        icon-name="custom:custom44">
+
+        <!-- Search Input -->
+        <div class="slds-var-p-around_medium">
+            <lightning-input type="search"
+                placeholder="Enter Name"
+                label="Search Contacts"
+                value={searchValue}
+                onchange={handleChange}>
+            </lightning-input>
+        </div>
+
+        <!-- Datatable with Spinner Overlay -->
+        <div class="slds-var-p-around_medium">
+            <template lwc:if={isLoading}>
+                <lightning-spinner
+                    alternative-text="Loading"
+                    size="small">
+                </lightning-spinner>
+            </template>
+
+            <template lwc:if={contactsList}>
+                <lightning-datatable
+                    key-field="id"
+                    columns={fields}
+                    data={contactsList}
+                    hide-checkbox-column>
+                </lightning-datatable>
+            </template>
+        </div>
+
+        <!-- Pagination and Combobox -->
+        <div class="slds-var-p-around_small">
+            <lightning-layout
+                horizontal-align="spread">
+
+                <!-- Reset Button -->
+                <lightning-layout-item
+                    padding="around-small">
+                    <lightning-button-icon
+                        variant="brand"
+                        icon-name="utility:refresh"
+                        size="small"
+                        onclick={handleReset}>
+                    </lightning-button-icon>
+                </lightning-layout-item>
+
+                <!-- Record Size Combobox -->
+                <lightning-layout-item>
+                    <lightning-combobox
+                        name="Record Size"
+                        label="" placeholder=""
+                        value={selectedValue}
+                        options={options}
+                        onchange={handleSizeChange}>
+                    </lightning-combobox>
+                </lightning-layout-item>
+
+                <!-- Pagination Info -->
+                <lightning-layout-item
+                    padding="around-small">
+                    <p style="font-weight: bold;">
+                        Page {pageNumber} of
+                        {totalPages}
+                        ({totalRecordCount}
+                        Records)
+                    </p>
+                </lightning-layout-item>
+
+                <!-- Next Button -->
+                <lightning-layout-item
+                    padding="around-small">
+                    <lightning-button-icon
+                        variant="brand"
+                        disabled={disableNextButton}
+                        icon-name="utility:chevronright"
+                        size="small"
+                        onclick={handleNext}>
+                    </lightning-button-icon>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>
