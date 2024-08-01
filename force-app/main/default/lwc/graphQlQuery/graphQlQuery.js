@@ -59,6 +59,10 @@ export default class GraphQlQuery extends LightningElement {
     return Math.ceil(this.totalRecordCount / parseInt(this.selectedValue, 10));
   }
 
+  get disableRecordSizeSelection() {
+    return this.pageNumber !== 1 || !this.pageInfo.hasNextPage;
+  }
+
   get variables() {
     console.log("Variables:", {
       searchTerm: "%" + this.searchValue + "%",
