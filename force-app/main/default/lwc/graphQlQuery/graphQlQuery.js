@@ -162,8 +162,11 @@ export default class GraphQlQuery extends LightningElement {
   handleChange(event) {
     event.preventDefault();
     this.searchValue = event.target.value;
-    this.after = null;
-    this.pageNumber = 1;
+    if (!this.pageInfo.hasNextPage) {
+      this.after = null;
+      this.pageNumber = 1;
+      this.isLoading = true;
+    }
     this.isLoading = true;
   }
 

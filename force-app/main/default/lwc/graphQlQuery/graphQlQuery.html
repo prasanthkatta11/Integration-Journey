@@ -32,17 +32,17 @@
         </div>
 
         <!-- Pagination and Combobox -->
-        <div class="slds-var-p-around_small">
+        <div>
             <lightning-layout
                 horizontal-align="spread">
 
                 <!-- Reset Button -->
                 <lightning-layout-item
-                    padding="around-small">
+                    padding="around-medium">
                     <lightning-button-icon
                         variant="brand"
                         icon-name="utility:refresh"
-                        size="small"
+                        size="medium"
                         onclick={handleReset}>
                     </lightning-button-icon>
                 </lightning-layout-item>
@@ -60,8 +60,8 @@
 
                 <!-- Pagination Info -->
                 <lightning-layout-item
-                    padding="around-small">
-                    <p style="font-weight: bold;">
+                    padding="around-large">
+                    <p class="pagination-info ">
                         Page {pageNumber} of
                         {totalPages}
                         ({totalRecordCount}
@@ -71,12 +71,12 @@
 
                 <!-- Next Button -->
                 <lightning-layout-item
-                    padding="around-small">
+                    padding="around-medium">
                     <lightning-button-icon
                         variant="brand"
                         disabled={disableNextButton}
                         icon-name="utility:chevronright"
-                        size="small"
+                        size="medium"
                         onclick={handleNext}>
                     </lightning-button-icon>
                 </lightning-layout-item>

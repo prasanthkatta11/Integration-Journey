@@ -12,3 +12,9 @@
 /* left: 50%; Center horizontally */
 /* transform: translate(-50%, -50%); Adjust for centering */
 /* z-index: 1; Ensure the spinner is above other content */
+/* graphQlQuery.css */
+.pagination-info {
+  font-size: 1rem; /* Adjust as needed */
+  color: #0070d2; /* Salesforce blue, adjust or use a different color */
+  font-weight: bold;
+}
