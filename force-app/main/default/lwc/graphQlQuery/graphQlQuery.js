@@ -65,12 +65,12 @@ export default class GraphQlQuery extends LightningElement {
 
   get variables() {
     console.log("Variables:", {
-      searchTerm: "%" + this.searchValue + "%",
+      searchTerm: `%${this.searchValue}%`,
       after: this.after,
       first: parseInt(this.selectedValue, 10)
     });
     return {
-      searchTerm: "%" + this.searchValue + "%",
+      searchTerm: `%${this.searchValue}%`,
       after: this.after,
       first: parseInt(this.selectedValue, 10)
     };
