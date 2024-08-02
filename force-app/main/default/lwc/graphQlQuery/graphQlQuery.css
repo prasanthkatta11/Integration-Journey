@@ -1,18 +1,3 @@
-/* .datatable-container {
-  position: relative; /* Set position to relative for the container */
-
-/*.c-container {
-  border: 1px solid #d8dde6;
-  margin: 10px 0 20px;
-}
-
-/*.spinner-overlay {
-  position: absolute; /* Position the spinner absolutely */
-/* top: 50%; Center vertically */
-/* left: 50%; Center horizontally */
-/* transform: translate(-50%, -50%); Adjust for centering */
-/* z-index: 1; Ensure the spinner is above other content */
-/* graphQlQuery.css */
 .pagination-info {
   font-size: 1rem; /* Adjust as needed */
   color: #0070d2; /* Salesforce blue, adjust or use a different color */
