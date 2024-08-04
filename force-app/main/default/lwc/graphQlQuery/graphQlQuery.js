@@ -33,7 +33,7 @@ export default class GraphQlQuery extends LightningElement {
   contactsList = [];
   fields = columns;
   after = null;
-  pageInfo = "";
+  pageInfo = {};
   pageNumber = 1;
   totalRecordCount = 0;
   selectedValue = "3";
@@ -41,6 +41,7 @@ export default class GraphQlQuery extends LightningElement {
   options = [
     { label: "3", value: "3" },
     { label: "5", value: "5" },
+    { label: "7", value: "7" },
     { label: "10", value: "10" }
   ];
 
@@ -50,8 +51,6 @@ export default class GraphQlQuery extends LightningElement {
 
   handleSizeChange(event) {
     this.selectedValue = event.detail.value;
-    this.pageNumber = 1;
-    this.after = null;
     this.isLoading = true;
   }
 
@@ -166,11 +165,8 @@ export default class GraphQlQuery extends LightningElement {
   handleChange(event) {
     event.preventDefault();
     this.searchValue = event.target.value;
-    if (!this.pageInfo.hasNextPage) {
-      this.after = null;
-      this.pageNumber = 1;
-      this.isLoading = true;
-    }
+    this.pageNumber = 1;
+    this.after = null;
     this.isLoading = true;
   }
 
@@ -205,6 +201,5 @@ export default class GraphQlQuery extends LightningElement {
     this.searchValue = "";
     this.pageNumber = 1;
     this.after = null;
-    this.isLoading = false;
   }
 }

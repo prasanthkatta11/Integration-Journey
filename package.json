@@ -41,5 +41,8 @@
   "main": "jest.config.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "graphql-config": "^5.1.0"
+  }
 }
