@@ -1,0 +1,14 @@
+<template>
+    <lightning-progress-indicator
+        current-step={currentStatus} type="path"
+        variant="base" onclick={handleStepClick}>
+        <template for:each={statusOptions}
+            for:item="statusOption">
+            <lightning-progress-step
+                label={statusOption.label}
+                value={statusOption.value}
+                key={statusOption.value}
+                data-value={statusOption.value}></lightning-progress-step>
+        </template>
+    </lightning-progress-indicator>
+</template>
