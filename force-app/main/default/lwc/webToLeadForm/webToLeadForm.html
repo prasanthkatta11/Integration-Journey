@@ -1,0 +1,102 @@
+<template>
+    <lightning-card>
+        <div
+            class="slds-var-p-around_small slds-border_bottom">
+            <h2
+                class="slds-text-heading_large slds-text-align_center">
+                Web to Lead Form</h2>
+        </div>
+        <div class="slds-var-p-around_medium">
+            <lightning-combobox
+                class="slds-var-p-bottom_small slds-var-p-top_small"
+                data-id="selectedIndustryValue"
+                label="What is the nature of your Industry?"
+                value={selectedIndustryValue}
+                placeholder="Select Industry"
+                options={industryOptions}
+                variant="label-inline"
+                onchange={handleChange}
+                required></lightning-combobox>
+
+            <div class="slds-grid slds-wrap">
+                <div
+                    class="slds-col slds-size_1-of-2 slds-var-p-around_xx-small">
+                    <span><lightning-input
+                            data-id="firstName"
+                            type="text"
+                            label="First Name"
+                            value={firstName}
+                            onchange={handleChange}
+                            required></lightning-input></span>
+                </div>
+
+                <div
+                    class="slds-col slds-size_1-of-2 slds-var-p-around_xx-small">
+                    <span><lightning-input
+                            data-id="lastName"
+                            type="text"
+                            label="Last Name"
+                            value={lastName}
+                            onchange={handleChange}
+                            required></lightning-input></span>
+                </div>
+            </div>
+
+            <div class="slds-grid slds-wrap">
+                <div
+                    class="slds-col slds-size_1-of-2 slds-var-p-around_xx-small">
+                    <span><lightning-input
+                            class="slds-var-p-bottom_small slds-var-p-top_small"
+                            data-id="email"
+                            type="email"
+                            label="Email address"
+                            value={email}
+                            onchange={handleChange}
+                            required></lightning-input></span>
+                </div>
+
+                <div
+                    class="slds-col slds-size_1-of-2 slds-var-p-around_xx-small">
+                    <span><lightning-input
+                            class="slds-var-p-bottom_small slds-var-p-top_small"
+                            data-id="mobileNumber"
+                            type="tel"
+                            label="Mobile Number"
+                            value={mobileNumber}
+                            placeholder="Enter minimum 10 digits and format should be 04xxxxxxxx"
+                            onchange={handleChange}
+                            field-level-help="Enter mobile number starting with 04 followed by 8 digits"
+                            message-when-value-missing="Please enter mobile number"
+                            required></lightning-input></span>
+                </div>
+            </div>
+
+            <lightning-textarea
+                class="slds-var-p-bottom_small slds-var-p-top_small slds-var-p-around_xx-small"
+                data-id="description" type="text"
+                label="Details"
+                value={description}
+                placeholder="Enter Details"
+                onchange={handleChange}></lightning-textarea>
+
+            <div>
+                <lightning-input
+                    class="slds-var-p-bottom_small slds-var-p-top_small"
+                    data-id="termsAccepted"
+                    type="checkbox"
+                    label="I agree to the terms and conditions"
+                    onchange={handleChange}
+                    checked={termsAccepted}
+                    required></lightning-input>
+            </div>
+
+            <div>
+                <lightning-button
+                    class="slds-var-p-bottom_small slds-var-p-top_small slds-align_absolute-center"
+                    label="Submit" variant="brand"
+                    type="submit"
+                    onclick={handleClick}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>
