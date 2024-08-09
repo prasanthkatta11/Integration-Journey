@@ -1,6 +1,8 @@
 import { LightningElement, wire, track } from "lwc";
 import { gql, graphql } from "lightning/uiGraphQLApi";
 
+const DELAY = 300;
+
 const columns = [
   { label: "Name", fieldName: "Name", type: "text" },
   { label: "Phone", fieldName: "Phone", type: "text" },
@@ -36,7 +38,8 @@ export default class GraphQlQuery extends LightningElement {
   pageInfo = {};
   pageNumber = 1;
   totalRecordCount = 0;
-  selectedValue = "3";
+  selectedValue = "5";
+  debounceTimeout;
 
   options = [
     { label: "3", value: "3" },
@@ -163,11 +166,23 @@ export default class GraphQlQuery extends LightningElement {
   }
 
   handleChange(event) {
+    if (this.debounceTimeout) {
+      clearTimeout(this.debounceTimeout);
+    }
     event.preventDefault();
-    this.searchValue = event.target.value;
+    let searchVal = event.target.value;
     this.pageNumber = 1;
     this.after = null;
-    this.isLoading = true;
+
+    this.debounceTimeout = setTimeout(() => {
+      this.searchValue = searchVal;
+      this.isLoading = true;
+      console.log("Search Value (after debounce):", this.searchValue);
+    }, DELAY);
+    console.log(
+      "🚀 ~ GraphQlQuery ~ handleChange ~ this.debounceTimeout:",
+      this.debounceTimeout
+    );
   }
 
   handleNext(event) {
