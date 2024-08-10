@@ -7,7 +7,11 @@ const columns = [
   { label: "Name", fieldName: "Name", type: "text" },
   { label: "Phone", fieldName: "Phone", type: "text" },
   { label: "Email", fieldName: "Email", type: "email" },
-  { label: "Account Name", fieldName: "AccountName", type: "text" },
+  {
+    label: "Account Name",
+    fieldName: "AccountName",
+    type: "text"
+  },
   { label: "Annual Revenue", fieldName: "AnnualRevenue", type: "currency" },
   {
     label: "Created Date",

@@ -1,12 +1,14 @@
 <template>
     <lightning-card>
+
         <div
-            class="slds-var-p-around_small slds-border_bottom">
+            class="slds-var-p-around_small slds-border_bottom slds-text-align_center">
             <h2
-                class="slds-text-heading_large slds-text-align_center">
+                class="slds-text-heading_large heading">
                 Web to Lead Form</h2>
         </div>
-        <div class="slds-var-p-around_medium">
+
+        <div class="slds-var-p-around_small">
             <lightning-combobox
                 class="slds-var-p-bottom_small slds-var-p-top_small"
                 data-id="selectedIndustryValue"
@@ -90,13 +92,12 @@
                     required></lightning-input>
             </div>
 
-            <div>
-                <lightning-button
-                    class="slds-var-p-bottom_small slds-var-p-top_small slds-align_absolute-center"
-                    label="Submit" variant="brand"
-                    type="submit"
-                    onclick={handleClick}></lightning-button>
-            </div>
+            <lightning-button
+                class="slds-var-p-bottom_small slds-var-p-top_small slds-align_absolute-center"
+                label="Submit" variant="brand"
+                type="submit"
+                onclick={handleClick}></lightning-button>
+
         </div>
     </lightning-card>
 </template>
