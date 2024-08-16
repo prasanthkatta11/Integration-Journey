@@ -220,5 +220,19 @@ export default class GraphQlQuery extends LightningElement {
     this.searchValue = "";
     this.pageNumber = 1;
     this.after = null;
+    Promise.resolve().then(() => {
+      // Set loading to false once the reset is complete
+      this.isLoading = false;
+    });
+  }
+
+  handlePageNumberChange(event) {
+    this.inputPageNumber = parseInt(event.target.value, 10);
+    if (this.inputPageNumber >= 1 && this.inputPageNumber <= this.totalPages) {
+      this.pageNumber = this.inputPageNumber;
+      this.after = this.pageNumber > 1 ? this.pageInfo.startCursor : null;
+      this.isLoading = true;
+      this.loadData();
+    }
   }
 }
