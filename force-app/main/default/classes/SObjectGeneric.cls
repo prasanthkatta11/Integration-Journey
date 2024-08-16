@@ -31,7 +31,7 @@ public with sharing class SObjectGeneric {
       ' WHERE Id = :recordId LIMIT 1';
     System.debug('Dynamic SOQL Query: ' + query);
 
-    Sobject record = Database.query(query);
+    Sobject record = System.Database.query(query);
     System.debug('record: ' + record);
 
     Map<string, object> keyValuePair = new Map<string, object>();
