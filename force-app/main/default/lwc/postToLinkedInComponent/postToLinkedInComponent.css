@@ -3,3 +3,7 @@ h1 {
   font-weight: bold;
   text-align: center;
 }
+
+:host {
+  --slds-c-textarea-sizing-min-height: 125px;
+}
