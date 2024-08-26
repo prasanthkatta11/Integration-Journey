@@ -1,6 +1,6 @@
 import { LightningElement, wire } from "lwc";
 import LEAD_OBJECT from "@salesforce/schema/Lead";
-import FIRSTNAME_FIEL from "@salesforce/schema/Lead.FirstName";
+import FIRSTNAME_FIELD from "@salesforce/schema/Lead.FirstName";
 import LASTNAME_FIELD from "@salesforce/schema/Lead.LastName";
 import EMAIL_FIELD from "@salesforce/schema/Lead.Email";
 import PHONE_FIELD from "@salesforce/schema/Lead.Phone";
