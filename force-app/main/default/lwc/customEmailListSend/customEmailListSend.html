@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Send Email">
+        <div class="slds-p-around_medium">
+            <p>RecordIds passed are {recordIds}
+            </p>
+            <lightning-input label="To"
+                value={toAddresses}></lightning-input>
+            <lightning-input label="Cc" name="cc"
+                value={ccAddresses}
+                onchange={handleChange}></lightning-input>
+            <lightning-input label="Bcc"
+                name="bcc" value={bccAddresses}
+                onchange={handleChange}></lightning-input>
+            <lightning-input label="Subject"
+                name="subject" value={subject}
+                onchange={handleChange}></lightning-input>
+            <lightning-input-rich-text
+                label="Body" value={body}
+                name="body"
+                onchange={handleChange}></lightning-input-rich-text>
+            <lightning-file-upload
+                label="Attach Files"
+                name="fileUploader"
+                record-id={recordId} multiple
+                onuploadfinished={handleChange}></lightning-file-upload>
+            <div class="slds-m-top_medium">
+                <lightning-button
+                    label="Send Email"
+                    onclick={sendEmail}
+                    variant="brand"></lightning-button>
+                <lightning-button label="Close"
+                    onclick={closeComposer}
+                    variant="neutral"
+                    class="slds-m-left_x-small"></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>
