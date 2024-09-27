@@ -16,27 +16,6 @@ export default class CustomEmailListSend extends NavigationMixin(
   @track body = "";
   @track contentDocumentIds = [];
 
-  //To test if the recordIds are available at initialising of the component
-  // connectedCallback() {
-  //   console.log("Connected Callback: Record IDs:", this.recordIds);
-  // }
-
-  // //To see if records are selected and then process the proxy object from flow
-  // renderedCallback() {
-  //   console.log("Rendered Callback: Record IDs:", this.recordIds);
-  //   if (this.recordIds && this.recordIds.length > 0) {
-  //     this.processRecordIds();
-  //   }
-  // }
-
-  // //Proxy object is coverted to array to pass into wire adapter
-  // processRecordIds() {
-  //   // Convert Proxy object to regular array
-  //   const regularArray = Array.from(this.recordIds);
-  //   console.log("Regular Array of Record IDs:", regularArray);
-  //   this.formattedRecordIds = regularArray;
-  // }
-
   @wire(accountByIds, { recordIds: "$recordIds" })
   wiredRecords({ error, data }) {
     console.log("Record IDs:", this.recordIds);
@@ -57,25 +36,38 @@ export default class CustomEmailListSend extends NavigationMixin(
     }
   }
 
-  handlechange(event) {
-    let { name, value } = event.target;
-    this[name] = value;
-    console.log("🚀 ~ handlechange ~ this[name] :", this[name]);
-    if (name === "fileUploader") {
-      const uploadedFiles = event.target.files;
-      this.contentDocumentIds = uploadedFiles.map((file) => file.documentId);
-      console.log(
-        "🚀 ~ handlechange ~ this.contentDocumentIds:",
-        this.contentDocumentIds
+  handleChange(event) {
+    try {
+      let { name, value } = event.target;
+      this[name] = value;
+      console.log("Value updated:", this[name]);
+    } catch (error) {
+      console.error("Error in handleChange:", error);
+      this.dispatchEvent(
+        new ShowToastEvent({
+          title: "Error",
+          message: "An error occurred while processing the input.",
+          variant: "error"
+        })
       );
     }
   }
 
+  handleUploadFinished(event) {
+    const uploadedFiles = event.detail.files;
+    this.contentDocumentIds = uploadedFiles.map((file) => file.documentId);
+    console.log("Uploaded files:", this.contentDocumentIds);
+  }
+
   sendEmail() {
     sendBulkEmail({
-      toAddresses: this.toAddresses,
-      ccAddresses: this.ccAddresses,
-      bccAddresses: this.bccAddresses,
+      toAddresses: this.toAddresses.split(",").map((email) => email.trim()),
+      ccAddresses: this.ccAddresses
+        ? this.ccAddresses.split(",").map((email) => email.trim())
+        : [],
+      bccAddresses: this.bccAddresses
+        ? this.ccAddresses.split(",").map((email) => email.trim())
+        : [],
       subject: this.subject,
       body: this.body,
       contentDocumentIds: this.contentDocumentIds
@@ -99,6 +91,15 @@ export default class CustomEmailListSend extends NavigationMixin(
           })
         );
       });
+  }
+
+  resetFields() {
+    this.toAddresses = [];
+    this.ccAddresses = [];
+    this.bccAddresses = [];
+    this.subject = "";
+    this.body = "";
+    this.contentDocumentIds = [];
   }
 
   closeComposer() {
