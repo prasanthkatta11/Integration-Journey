@@ -5,11 +5,13 @@
             </p>
             <lightning-input label="To"
                 value={toAddresses}></lightning-input>
-            <lightning-input label="Cc" name="cc"
+            <lightning-input label="Cc"
+                name="ccAddresses"
                 value={ccAddresses}
                 onchange={handleChange}></lightning-input>
             <lightning-input label="Bcc"
-                name="bcc" value={bccAddresses}
+                name="bccAddresses"
+                value={bccAddresses}
                 onchange={handleChange}></lightning-input>
             <lightning-input label="Subject"
                 name="subject" value={subject}

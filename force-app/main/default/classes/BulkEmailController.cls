@@ -23,7 +23,7 @@ public with sharing class BulkEmailController {
     email.setToAddresses(toAddresses);
 
     // Set CC addresses if provided
-    if (ccAddresses != null && !ccAddresses.isEmpty()) {
+    if (!ccAddresses.isEmpty()) {
       email.setCcAddresses(ccAddresses); // No need to split, passed as list
     }
 

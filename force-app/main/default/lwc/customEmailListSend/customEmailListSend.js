@@ -10,8 +10,8 @@ export default class CustomEmailListSend extends NavigationMixin(
 ) {
   @api recordIds; // Public property to receive the recordIds passed from the Flow button URL
   @track toAddresses = [];
-  @track ccAddresses = [];
-  @track bccAddresses = [];
+  @track ccAddresses = "";
+  @track bccAddresses = "";
   @track subject = "";
   @track body = "";
   @track contentDocumentIds = [];
@@ -40,7 +40,7 @@ export default class CustomEmailListSend extends NavigationMixin(
     try {
       let { name, value } = event.target;
       this[name] = value;
-      console.log("Value updated:", this[name]);
+      console.log(`${name} value updated: `, this[name]);
     } catch (error) {
       console.error("Error in handleChange:", error);
       this.dispatchEvent(
@@ -60,14 +60,23 @@ export default class CustomEmailListSend extends NavigationMixin(
   }
 
   sendEmail() {
+    console.log("To Addresses:", this.toAddresses);
+    console.log("CC Addresses:", this.ccAddresses);
+    console.log("BCC Addresses:", this.bccAddresses);
+    console.log("Subject:", this.subject);
+    console.log("Body:", this.body);
+    console.log("Content Document IDs:", this.contentDocumentIds);
+
     sendBulkEmail({
       toAddresses: this.toAddresses.split(",").map((email) => email.trim()),
-      ccAddresses: this.ccAddresses
-        ? this.ccAddresses.split(",").map((email) => email.trim())
-        : [],
-      bccAddresses: this.bccAddresses
-        ? this.ccAddresses.split(",").map((email) => email.trim())
-        : [],
+      ccAddresses:
+        this.ccAddresses && this.ccAddresses.trim() !== ""
+          ? this.ccAddresses.split(",").map((email) => email.trim())
+          : [],
+      bccAddresses:
+        this.bccAddresses && this.bccAddresses.trim() !== ""
+          ? this.ccAddresses.split(",").map((email) => email.trim())
+          : [],
       subject: this.subject,
       body: this.body,
       contentDocumentIds: this.contentDocumentIds
@@ -95,8 +104,8 @@ export default class CustomEmailListSend extends NavigationMixin(
 
   resetFields() {
     this.toAddresses = [];
-    this.ccAddresses = [];
-    this.bccAddresses = [];
+    this.ccAddresses = "";
+    this.bccAddresses = "";
     this.subject = "";
     this.body = "";
     this.contentDocumentIds = [];
@@ -110,7 +119,7 @@ export default class CustomEmailListSend extends NavigationMixin(
         actionName: "list"
       },
       state: {
-        filterName: "All Accounts"
+        filterName: "AllAccounts"
       }
     });
   }
