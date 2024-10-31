@@ -1,0 +1,157 @@
+{
+  "activeBrandingSetId" : "4ba54608-c677-445b-acd9-1255485dad0f",
+  "customCSS" : "/* Center the whole form and boxes to the center of the page */\n.np-form {\n    font-family: Arial, sans-serif;\n    font-weight: bold;\n    border-radius: 5px;\n    background-color: rgb(156, 215, 229); /* Background color */\n    padding: 24px;\n    width: 95%; /* Adjust width as needed to fit the section better */\n    max-width: 800px; /* Maximum width to prevent it from becoming too wide */\n    margin: auto; /* Center the form horizontally */\n    font-size: 14px; /* Increase font size */\n    border: 1px solid black; /* Black border */\n    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds a shadow for better visibility */\n}\n\n.slds-tabs_default, .slds-tabset__content {\n    background-color: rgb(233, 237, 238) !important;\n    font-size: 15px !important;\n}\n\n.slds-truncate {\n    font-size: 15px !important; /* Adjust the font size as needed */\n    white-space: normal; /* Allow text to wrap if space is available */\n}\n\n.np-form::after {\n    content: \"\";\n    display: table;\n    clear: both;\n}\n\n.np-form .col-25,\n.np-form .col-75 {\n    float: left;\n    width: 50%;\n    margin-top: 10px;\n}\n\n/* Responsive layout - when the screen is less than 1062px wide, make the two columns stack on top of each other instead of next to each other */\n@media screen and (max-width: 1062px) {\n    .np-form .col-25,\n    .np-form .col-75,\n    .np-form input[type=submit] {\n        width: 100%;\n        margin-top: 0;\n    }\n    \n    .np-form button[type=\"submit\"] {\n    background-color: #4CAF50; /* Green background color */\n    color: white; /* White text color */\n    padding: 12px 20px; /* Padding for the button */\n    border: none; /* Remove default border */\n    border-radius: 5px; /* Rounded corners */\n    cursor: pointer; /* Pointer cursor on hover */\n    font-size: 16px; /* Font size */\n    text-align: center; /* Center text */\n    display: block; /* Block display */\n    margin: 20px auto; /* Center button horizontally with margin */\n    transition: background-color 0.3s ease; /* Smooth transition for background color */\n}\n\n    .np-form select {\n        width: 100%; \n    }\n}",
+  "developerName" : "cpt",
+  "id" : "4294a6d0-52a1-4b10-8b2d-c17edef0a72c",
+  "label" : "Customer Account Portal",
+  "layouts" : {
+    "Inner" : "40aabd4b-77ad-4318-a8ef-91eb0e0f3017",
+    "Login" : "8f162415-f492-43a4-acb5-719c461a728f",
+    "ServiceNotAvailable" : "6f8c5045-c4a6-48fd-a772-f7ef216e8a2c"
+  },
+  "type" : "theme",
+  "views" : [ {
+    "componentAttributes" : { },
+    "componentName" : "salesforceIdentity:loginBody2",
+    "id" : "8f162415-f492-43a4-acb5-719c461a728f",
+    "label" : "Login",
+    "regions" : [ {
+      "id" : "1a8f500a-d808-446b-8e86-f98eaf049be3",
+      "regionName" : "header",
+      "type" : "region"
+    }, {
+      "id" : "518aa039-44c0-4931-9485-43c5deb5348d",
+      "regionName" : "content",
+      "type" : "region"
+    }, {
+      "id" : "d5ae2f1e-1561-4ea0-8a61-67a1b43122d7",
+      "regionName" : "footer",
+      "type" : "region"
+    } ],
+    "type" : "view"
+  }, {
+    "componentAttributes" : {
+      "IsDefaultHeaderHidden" : false,
+      "IsDefaultHeaderPositionFixed" : true,
+      "IsDefaultNotificationsHidden" : false,
+      "IsSearchBarHidden" : true,
+      "fixedPageWidth" : 1400,
+      "isPageWidthFixed" : true
+    },
+    "componentName" : "siteforce:cptBody",
+    "id" : "40aabd4b-77ad-4318-a8ef-91eb0e0f3017",
+    "label" : "Default",
+    "regions" : [ {
+      "id" : "b5109032-143c-498e-bc6d-5498bfabe010",
+      "regionName" : "customHeader",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : {
+          "maxAutoCompleteResults" : 5,
+          "searchLabel" : "Search...",
+          "searchObjects" : [ {
+            "isPublic" : true,
+            "name" : "KnowledgeArticleVersion"
+          }, {
+            "isPublic" : false,
+            "name" : "Case"
+          }, {
+            "isPublic" : true,
+            "name" : "ContentDocument"
+          } ]
+        },
+        "componentName" : "forceCommunity:globalSearchInput",
+        "id" : "48fceb6e-4041-415d-b88f-340008c00c21",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "b34a3c91-9ced-4bb6-9839-bed190ee1e09",
+      "regionName" : "search",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : {
+          "accountManagementLabel" : "Account Management",
+          "communityBuilderLabel" : "Experience Builder",
+          "communitySetupLabel" : "Salesforce Setup",
+          "contactSupportLabel" : "Contact Support",
+          "filterName" : "MyCases",
+          "homeLabel" : "Home",
+          "includeContactSupport" : false,
+          "includeMessages" : false,
+          "loginLabel" : "",
+          "logoutLabel" : "Logout",
+          "myAccountLabel" : "My Account",
+          "showAccountManagement" : true,
+          "showUserSettings" : false,
+          "userSettingsLabel" : "My Settings",
+          "viewProfileLabel" : "My Profile"
+        },
+        "componentName" : "selfService:userProfileMenu",
+        "id" : "c296844d-74d6-4a82-bd72-6aea7d2fca49",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "abf68dd1-e724-44d7-beab-fa54041139e7",
+      "regionName" : "profileMenu",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : {
+          "NavigationMenuEditorRefresh" : "Default_Navigation",
+          "hideAppLauncher" : true,
+          "hideHomeText" : true
+        },
+        "componentName" : "forceCommunity:globalNavigation",
+        "id" : "fbcfddd6-a5c2-453f-8198-7da47a6a734b",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "a1cadbf9-bda5-41d7-9ea9-2294ec7dd967",
+      "regionName" : "navBar",
+      "type" : "region"
+    }, {
+      "id" : "bdad253a-7d08-4858-806b-a98bd59549cb",
+      "regionName" : "customRegion",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : {
+          "richTextValue" : "<p style=\"text-align: center;\"><span style=\"font-size: 10px;\">&nbsp;</span><span style=\"font-size: 10px; background-color: rgb(235, 244, 246); color: rgb(11, 10, 10);\">All Icons used are under commercial free license Agreement. Rights to Salesforce Images belongs to Salesforce.</span></p>"
+        },
+        "componentName" : "forceCommunity:richTextInline",
+        "id" : "a53ffef7-88a7-4f49-aca0-02111f951091",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "3e3412f7-9eda-4a45-bfbf-2df74b22405e",
+      "regionName" : "footer",
+      "type" : "region"
+    } ],
+    "type" : "view"
+  }, {
+    "componentAttributes" : {
+      "fixedPageWidth" : 1170,
+      "headerBgColor" : "rgba(0, 0, 0, 0)",
+      "isHeaderPinned" : false,
+      "isHeroUnderHeader" : false,
+      "isPageWidthFixed" : true,
+      "showHeader" : false,
+      "showHero" : true
+    },
+    "componentName" : "siteforce:themeLayoutStarter",
+    "id" : "6f8c5045-c4a6-48fd-a772-f7ef216e8a2c",
+    "label" : "ServiceNotAvailable",
+    "regions" : [ {
+      "id" : "92fb0286-677f-4627-b4b0-ab4cb30f1479",
+      "regionName" : "themeHeader",
+      "type" : "region"
+    }, {
+      "id" : "3c789b3e-1f8f-4933-85b3-0c1c7332626c",
+      "regionName" : "themeFooter",
+      "type" : "region"
+    } ],
+    "type" : "view"
+  } ]
+}

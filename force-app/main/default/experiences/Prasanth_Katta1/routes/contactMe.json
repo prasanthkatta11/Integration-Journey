@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "cfb38464-449d-4bad-8028-40fb4d3ee16d",
+  "appPageId" : "42cbb778-54b7-439f-b9e8-287163265203",
+  "configurationTags" : [ ],
+  "devName" : "Contact_Me__c",
+  "id" : "57c7e2a1-ab13-48b8-9bdd-ac879217aeef",
+  "label" : "Contact Me",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-contact-me",
+  "type" : "route",
+  "urlPrefix" : "contact-me"
+}

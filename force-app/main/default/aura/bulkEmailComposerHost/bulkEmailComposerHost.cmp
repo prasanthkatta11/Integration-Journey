@@ -1,0 +1,8 @@
+<aura:component
+    implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId"
+    access="global">
+    <aura:attribute name="recordIds"
+        type="List" />
+    <c:customEmailListSend
+        recordIds="{!v.recordIds}" />
+</aura:component>

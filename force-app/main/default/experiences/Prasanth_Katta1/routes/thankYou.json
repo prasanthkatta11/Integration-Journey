@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "1a7e835d-21ae-4c91-b73a-91b92446e5a2",
+  "appPageId" : "42cbb778-54b7-439f-b9e8-287163265203",
+  "configurationTags" : [ ],
+  "devName" : "Thank_You__c",
+  "id" : "ae093117-c616-4431-bd1d-4b64a18f6ae2",
+  "label" : "Thank You",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-thank-you",
+  "type" : "route",
+  "urlPrefix" : "thank-you"
+}

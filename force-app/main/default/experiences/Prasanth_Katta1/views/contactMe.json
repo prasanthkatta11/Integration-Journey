@@ -1,0 +1,101 @@
+{
+  "appPageId" : "42cbb778-54b7-439f-b9e8-287163265203",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "cfb38464-449d-4bad-8028-40fb4d3ee16d",
+  "label" : "Contact Me",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "40890f37-7d43-4c06-a7f2-4dab9f593107",
+          "columns" : [ {
+            "UUID" : "51d3311c-de9e-4a00-ad00-0cced1053a36",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "6",
+            "seedComponents" : [ ]
+          }, {
+            "UUID" : "11f22400-8bf9-4f3a-b7cd-366f74c50727",
+            "columnKey" : "3b181",
+            "columnName" : "Column 2",
+            "columnWidth" : "6",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 325
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "40890f37-7d43-4c06-a7f2-4dab9f593107",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<div class=\"np-form\">\n    <h2 style=\"text-align: center; font-weight: bold; font-size: 26px; font-family: Nunito; color: white;\">GET IN TOUCH</h2>\n    <form action=\"https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DQy000004TAGE\" method=\"POST\">\n        <input type=\"hidden\" name=\"oid\" value=\"00DQy000004TAGE\">\n        <input type=\"hidden\" name=\"retURL\" value=\"https://prasanth-katta-dev-ed.trailblaze.my.site.com/PrasanthKatta/s/thank-you\">\n        \n        <!-- Add space after the heading -->\n        <div style=\"margin-bottom: 15px;\"></div>\n        \n        <div style=\"margin-bottom: 20px;\">\n            <label for=\"first_name\" style=\"color: white;\">First Name <span style=\"color: red;\">*</span></label>\n            <input id=\"first_name\" maxlength=\"40\" name=\"first_name\" pattern=\"[A-Za-z ]+\" type=\"text\" placeholder=\"Enter your first name\" style=\"width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; color: white; background-color: #2d3539;\" required>\n        </div>\n\n        <div style=\"margin-bottom: 20px;\">\n            <label for=\"last_name\" style=\"color: white;\">Last Name</label>\n            <input id=\"last_name\" maxlength=\"80\" name=\"last_name\" pattern=\"[A-Za-z ]+\" type=\"text\" placeholder=\"Enter your Last name\" style=\"width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; color: white; background-color: #2d3539;\">\n        </div>\n\n        <div style=\"margin-bottom: 20px;\">\n            <label for=\"email\" style=\"color: white;\">Email <span style=\"color: red;\">*</span></label>\n            <input id=\"email\" maxlength=\"80\" name=\"email\" type=\"email\" pattern=\"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\" placeholder=\"Enter a valid email address\" style=\"width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; color: white; background-color: #2d3539;\" required>\n        </div>\n    \n        <div style=\"margin-bottom: 20px;\">\n            <label for=\"mobile\" style=\"color: white;\">Phone Number</label>\n            <input id=\"mobile\" maxlength=\"40\" pattern=\"\\d{10}\" name=\"mobile\" size=\"10\" type=\"text\" placeholder=\"Enter landline with areacode or mobile number, 04xxxxxxxx\" style=\"width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; color: white; background-color: #2d3539;\">\n            <i class=\"fas fa-info-circle\" style=\"position: absolute; right: 10px; top: 10px; color: #007bff; cursor: pointer;\"></i>\n        </div>\n\n        <div style=\"margin-bottom: 20px;\">\n            <label for=\"company\" style=\"color: white;\">Company</label>\n            <input id=\"company\" maxlength=\"100\" name=\"company\" type=\"text\" placeholder=\"Enter your company name\" style=\"width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; color: white; background-color: #2d3539;\">\n        </div>\n\n        <div style=\"margin-bottom: 20px;\">\n            <label for=\"comments\" style=\"color: white;\">How can I help you?</label>\n            <textarea id=\"comments\" name=\"00NQy000001f6Lp\" rows=\"4\" style=\"width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; color: white; background-color: #2d3539;\"></textarea>\n        </div>\n        \n        <div style=\"margin-bottom: 20px; display: none;\">\n            <label for=\"lead_source\" style=\"display:none;\">Lead Source</label>\n            <select id=\"lead_source\" name=\"lead_source\" style=\"padding: 10px 20px; background-color: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;\">\n                <option value=\"Web\" selected>Web</option>\n            </select>\n        </div>\n\n        <div style=\"margin-bottom: 20px; display: flex; justify-content: center;\">\n            <input type=\"submit\" name=\"submit\" value=\"Submit\" style=\"padding: 10px 20px; background-color: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;\">\n        </div>\n    </form>\n</div>"
+          },
+          "componentName" : "forceCommunity:htmlBlock",
+          "id" : "e2d84ee5-928f-4106-b339-3fe61d6ce5e4",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "51d3311c-de9e-4a00-ad00-0cced1053a36",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<p style=\"text-align: center;\"><br></p>\n<p style=\"text-align: center;\"><span style=\"font-size: 11px;\"><img class=\"sfdcCbImage\" alt=\"\" src=\"{!contentAsset.contact.1}\"></span></p>\n<p><br></p>\n<p><span style=\"font-size: 11px;\">﻿</span></p>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "62ce63ea-2baa-4f1c-bfd3-dd4484cf6e4f",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "richTextValue" : "<h1 style=\"text-align: center;\"><br></h1>\n<h1 style=\"text-align: center;\"><strong style=\"font-size: 26px;\">Let's Connect!</strong><span style=\"font-size: 26px;\">&nbsp;</span>&nbsp;</h1>\n<h1 style=\"text-align: center;\">&nbsp;&nbsp;&nbsp;<a href=\"https://www.salesforce.com/trailblazer/pkatta15\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"font-size: 16px;\"><img class=\"sfdcCbImage\" alt=\"\" src=\"{!contentAsset.logo_trailhead.1}\" style=\"width: 84.1771px; height: 71.5208px;\"></a>&nbsp;<a href=\"https://www.linkedin.com/in/prasanthkatta\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"font-size: 16px;\"><img class=\"sfdcCbImage\" alt=\"\" src=\"{!contentAsset.icons8linkedin4801.1}\" style=\"width: 75.3646px; height: 75.3646px;\"></a><a href=\"mailto:prasanthkatta@hotmail.com\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"font-size: 16px;\"><img class=\"sfdcCbImage\" alt=\"\" src=\"{!contentAsset.icons8microsoftoutlook480.1}\" style=\"width: 76.5938px; height: 76.5938px;\"></a>&nbsp;</h1>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "bd3d6952-b4be-4666-bd30-d6fea363d4d0",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "11f22400-8bf9-4f3a-b7cd-366f74c50727",
+        "regionLabel" : "Column 2",
+        "regionName" : "3b181",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "982529f2-c6e6-41eb-93d4-934a7a25d231",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Contact Me"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "fb7cd753-f30f-468f-ae35-348d559c8a02",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "722774d3-c050-4a62-9f2f-2db7d73ca97b",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-contact-me"
+}

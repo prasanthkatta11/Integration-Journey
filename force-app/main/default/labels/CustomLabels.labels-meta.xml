@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>WHATSAPPACCESSTOKEN</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WHATSAPPACCESSTOKEN</shortDescription>
+        <value>EAAGCOeU19QoBOx2l1UhOk16uvUGlCdZAypC3pnQsu9BQ5vqAyQ3gXDx4n6FWlLJzvhZAxpEZBSU4nqVxiIBBdkICb1TwUfzi67PeqEjHZAXekRagGhRrcjHgIAJzMKlfDWG03BZC2QWsKcJQerVUcvD6F094w7wLZAysECIbP6VOnX5YW0bXGywocRwj71Jbzw6Aw28HnccJ38BgZCh</value>
+    </labels>
+    <labels>
+        <fullName>WHATSAPPSECRET</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WHATSAPPSECRET</shortDescription>
+        <value>c0b406136c2fee3be6c65e40389d88f4</value>
+    </labels>
+    <labels>
+        <fullName>WHATSVERIFYTOKEN</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WHATSVERIFYTOKEN</shortDescription>
+        <value>ANVIAIRA</value>
+    </labels>
+</CustomLabels>

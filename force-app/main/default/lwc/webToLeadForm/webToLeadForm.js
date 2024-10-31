@@ -1,10 +1,16 @@
 import { LightningElement, wire } from "lwc";
 import LEAD_OBJECT from "@salesforce/schema/Lead";
+// eslint-disable-next-line no-unused-vars
 import FIRSTNAME_FIELD from "@salesforce/schema/Lead.FirstName";
+// eslint-disable-next-line no-unused-vars
 import LASTNAME_FIELD from "@salesforce/schema/Lead.LastName";
+// eslint-disable-next-line no-unused-vars
 import EMAIL_FIELD from "@salesforce/schema/Lead.Email";
+// eslint-disable-next-line no-unused-vars
 import PHONE_FIELD from "@salesforce/schema/Lead.Phone";
+// eslint-disable-next-line no-unused-vars
 import DESCRIPTION_FIELD from "@salesforce/schema/Lead.Description";
+// eslint-disable-next-line no-unused-vars
 import TERMS_FIELD from "@salesforce/schema/Lead.I_agree_to_terms_and_conditions__c";
 import INDUSTRY_FIELD from "@salesforce/schema/Lead.Industry";
 import { getObjectInfo, getPicklistValues } from "lightning/uiObjectInfoApi";

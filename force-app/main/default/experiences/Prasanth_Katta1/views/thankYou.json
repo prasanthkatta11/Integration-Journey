@@ -1,0 +1,70 @@
+{
+  "appPageId" : "42cbb778-54b7-439f-b9e8-287163265203",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "1a7e835d-21ae-4c91-b73a-91b92446e5a2",
+  "label" : "Thank You",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "f341a6ee-00e5-4910-908d-a334bdb1800c",
+          "columns" : [ {
+            "UUID" : "6055b01a-f3e1-41ff-8344-a1f7f5523ac9",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "f341a6ee-00e5-4910-908d-a334bdb1800c",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<p style=\"text-align: center;\"><img class=\"sfdcCbImage\" alt=\"\" src=\"{!contentAsset.thumbup.1}\" style=\"width: 180.427px; height: 180.427px;\"></p>\n<p style=\"text-align: center;\"><strong style=\"font-size: 36px;\">Thank you for reaching out!</strong></p>\n<p style=\"text-align: center;\"><br></p>\n<p style=\"text-align: center;\"><strong style=\"font-size: 26px;\">Your request has been successfully submitted.</strong></p>\n<p style=\"text-align: center;\"><span style=\"font-size: 16px;\">Please be informed that an automated email has been sent to your email inbox. In case you are unable to locate it, kindly check your spam folder.</span></p>\n<p style=\"text-align: center;\"><br></p>\n<p style=\"text-align: center;\"><span style=\"font-size: 16px;\">For any further enquiries, reach me at prasanthkatta11@gmail.com</span></p>\n<p style=\"text-align: center;\"><br></p>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "48484962-329e-49cd-97c6-228f85fe865b",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "6055b01a-f3e1-41ff-8344-a1f7f5523ac9",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "e79a8f90-5dcd-4126-b0ba-79af76cc9702",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Thank You"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "225d4879-a9b9-4353-95df-fac02d441e0e",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "8289389d-4760-4123-9bb3-bcc356c7665e",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-thank-you"
+}

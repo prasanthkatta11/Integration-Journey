@@ -57,6 +57,17 @@ export default class CustomEmailListSend extends NavigationMixin(
     const uploadedFiles = event.detail.files;
     this.contentDocumentIds = uploadedFiles.map((file) => file.documentId);
     console.log("Uploaded files:", this.contentDocumentIds);
+    this.navigateToFiles();
+  }
+
+  navigateToFiles() {
+    this[NavigationMixin.Navigate]({
+      type: "standard__objectPage",
+      attributes: {
+        objectApiName: "ContentDocument", // Navigating to Files tab
+        actionName: "home"
+      }
+    });
   }
 
   sendEmail() {

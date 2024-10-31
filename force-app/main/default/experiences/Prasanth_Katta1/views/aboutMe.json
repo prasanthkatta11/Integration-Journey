@@ -1,0 +1,114 @@
+{
+  "appPageId" : "42cbb778-54b7-439f-b9e8-287163265203",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "05679e51-3cf5-47cc-89e0-7dce57311850",
+  "label" : "About Me",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "78f71685-aa9d-4d7b-a8be-46c8998e0add",
+          "columns" : [ {
+            "UUID" : "1ed29261-1e76-4b83-9272-3b345c99a200",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "4",
+            "seedComponents" : [ ]
+          }, {
+            "UUID" : "f24b9e8d-ba3f-445b-8d06-bb0b1df248c9",
+            "columnKey" : "eb8c5",
+            "columnName" : "Column 2",
+            "columnWidth" : "4",
+            "seedComponents" : [ ]
+          }, {
+            "UUID" : "d4ff5a41-84d0-4f18-9a9f-d12ba46a9498",
+            "columnKey" : "33b9b",
+            "columnName" : "Column 3",
+            "columnWidth" : "4",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "78f71685-aa9d-4d7b-a8be-46c8998e0add",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<p style=\"text-align: justify;\"><strong style=\"font-size: 24px;\">PROFESSIONAL :</strong></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\">I’<span style=\"font-size: 16px;\">m someone who thrives on learning and curiosity, whether it's diving into a new technology or solving complex problems. Outside of work, I love exploring how things work and finding creative ways to make life more efficient. I’m passionate about tech not just as a career, but as a way to bring positive change to everyday processes. I enjoy challenges, and when I’m not troubleshooting issues, you can find me researching new trends or experimenting with digital tools that enhance productivity and creativity.</span></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><br></p>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "1b77c7fc-12e3-4fe4-b54b-6032a3d3a00a",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "1ed29261-1e76-4b83-9272-3b345c99a200",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p style=\"text-align: center;\"><br></p><p style=\"text-align: center;\"><br></p><p style=\"text-align: center;\"><br></p><p style=\"text-align: center;\"><br></p><p style=\"text-align: center;\"><br></p><p style=\"text-align: center;\"><span style=\"font-family: georgia; font-size: 24px;\">\"The only person you are destined to become is the person you decide to be.\" - Ralph Waldo Emerson</span></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><span style=\"font-family: georgia; font-size: 24px;\">&nbsp;</span></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p>&nbsp;</p>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "dd1adb4f-9b8a-408b-a1cf-b97ca442be94",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "f24b9e8d-ba3f-445b-8d06-bb0b1df248c9",
+        "regionLabel" : "Column 2",
+        "regionName" : "eb8c5",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<p style=\"text-align: justify;\"><strong style=\"font-size: 24px;\">PROFESSIONAL :</strong></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Over the course of my career, I have developed a unique blend of technical expertise and problem-solving abilities, allowing me to deliver effective IT solutions under high-pressure environments. In my role at Lycamobile, I took pride in optimizing operational efficiency by designing a Google My Maps-based system, streamlining the capture of sales data, and reducing the need for manual data entry in day-to-day processes. This initiative greatly improved data accuracy and operational speed, contributing to increased productivity.</span></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><span style=\"font-size: 16px;\">I also played an active role in network testing and implementing new website features, which fueled my interest in leveraging technology to enhance business processes. These hands-on experiences have cultivated my passion for IT and sparked a drive to pursue more sophisticated roles within the tech industry.</span></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><span style=\"font-size: 16px;\">My enthusiasm for technology's ability to transform business operations led me to Salesforce, where I embarked on an in-depth journey to specialize in Salesforce administration and development. Through formal training, self-learning, and real-world application, I have honed my skills in Salesforce platform administration, configuration, customization, and development.</span></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><span style=\"font-size: 16px;\">I now possess a solid understanding of user management, security controls, process automation, data management, and reporting on the Salesforce platform. I have also gained experience in Apex programming, REST API integrations, and the development of Lightning Web Components, enabling me to provide scalable and reliable solutions that enhance business processes.</span></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\"><span style=\"font-size: 16px;\">I am committed to continuous learning and staying at the forefront of emerging IT technologies, and I am excited to apply my knowledge and skills to drive impactful results in future IT roles..</span></p>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "7b958d60-d265-4ac4-abb6-143b3efcf13a",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "d4ff5a41-84d0-4f18-9a9f-d12ba46a9498",
+        "regionLabel" : "Column 3",
+        "regionName" : "33b9b",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "e58d6aeb-373f-41e3-9197-24e56a57b8cb",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "About Me"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "5eef66d9-d8c9-46b5-9158-123184fe5167",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "4b17eaed-179a-4cc0-8af2-ebad65492a4d",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-about-me"
+}

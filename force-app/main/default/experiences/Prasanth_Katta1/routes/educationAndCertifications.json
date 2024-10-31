@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "2a5e22d4-3740-4d95-9fa9-7814a079e87d",
+  "appPageId" : "42cbb778-54b7-439f-b9e8-287163265203",
+  "configurationTags" : [ ],
+  "devName" : "Education__c",
+  "id" : "d0bae9c1-d824-4377-bdd4-84b812c0997a",
+  "label" : "Education and Certifications",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-education",
+  "type" : "route",
+  "urlPrefix" : "education"
+}

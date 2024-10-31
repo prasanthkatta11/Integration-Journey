@@ -1,0 +1,67 @@
+{
+  "appPageId" : "9e0be223-c1e9-4e1d-bdb8-f37760ec1d88",
+  "componentName" : "siteforce:sldsThreeCol444Layout",
+  "dataProviders" : [ ],
+  "id" : "5ec2156c-ad51-416d-a0ad-6c0efe8c2c6a",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "maxWidth" : 100,
+        "overlayColor" : "rgba(0,0,0,0.6)",
+        "overlayHoverColor" : "",
+        "radius" : 0,
+        "showTitle" : false,
+        "textAlignment" : "center",
+        "textBgColor" : "rgba(0,0,0,0)",
+        "textBgHoverColor" : "rgba(0,0,0,0)",
+        "textColor" : "",
+        "textHoverColor" : "",
+        "textPosition" : "center center",
+        "title" : "Featured Topics"
+      },
+      "componentName" : "forceTopic:featuredTopics",
+      "id" : "475c2ce1-5c02-46fb-b541-706d9d0aa059",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "29622cce-ed6e-4efb-ab0e-9a07968b7d9a",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "813d96a7-1693-42f9-bd5c-9b778801fca2",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "5d6d9866-9854-4faf-8710-0fd81c25ff98",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "id" : "4b904667-7999-47cd-b964-97478f72b6e1",
+    "regionName" : "sidebarAlt",
+    "type" : "region"
+  }, {
+    "id" : "b94242f2-98dc-4e1e-a857-e456207f9775",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "f6245a44-538f-4dbf-ad1d-41d79b13b57e",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "296cfdae-27a7-4dd5-8a7a-cdf82852d580",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Home",
+  "type" : "view",
+  "viewType" : "home"
+}

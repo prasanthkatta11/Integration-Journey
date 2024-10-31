@@ -1,0 +1,122 @@
+{
+  "appPageId" : "42cbb778-54b7-439f-b9e8-287163265203",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "5e8596ed-5ef7-480a-8ae6-bd39a058da22",
+  "label" : "Experience",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "0266f14c-1b97-4472-98fe-5f63456a104f",
+          "columns" : [ {
+            "UUID" : "97ca15ca-f2f5-46c9-ab4a-b545b5cf31cd",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "0266f14c-1b97-4472-98fe-5f63456a104f",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "tabsetConfig" : {
+              "UUID" : "e99732f2-b293-467d-ac41-5bcb2e1b8585",
+              "activeTab" : "",
+              "tabs" : [ {
+                "UUID" : "d00eb231-001a-4bcb-9f00-d26831a811d2",
+                "allowGuestUser" : true,
+                "locked" : false,
+                "seedComponents" : [ ],
+                "tabKey" : "2",
+                "tabName" : "Experience"
+              }, {
+                "UUID" : "0d40edf1-a76b-4ee4-b021-54d6a36ddf6b",
+                "allowGuestUser" : true,
+                "locked" : false,
+                "seedComponents" : [ ],
+                "tabKey" : "1",
+                "tabName" : "Bootcamp"
+              } ],
+              "useOverflowMenu" : true
+            }
+          },
+          "componentName" : "forceCommunity:tabLayout",
+          "id" : "e99732f2-b293-467d-ac41-5bcb2e1b8585",
+          "regions" : [ {
+            "components" : [ {
+              "componentAttributes" : {
+                "richTextValue" : "<p><strong style=\"font-size: 24px;\">EMPLOYMENT HISTORY :</strong></p><p><br></p><p><strong style=\"font-size: 18px;\">LYCAMOBILE AUSTRALIA – CUSTOMER, SALES SUPPORT / ADMINISTRATOR</strong></p><p><strong style=\"font-size: 18px;\">TENURE: 01/2017 – CURRENT</strong></p><ul><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Compiled and organized help documentation aimed at simplifying client onboarding processes and guiding users through digital systems, leading to higher user adoption rates and a reduction in support inquiries.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Orchestrated responses to customer inquiries within a fast-paced environment, tailoring product recommendations to align with customer preferences through both phone and email communication. This approach notably boosted customer satisfaction levels and contributed to increased sales figures.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Cultivated robust relationships with external stakeholders and clientele, fostering a sense of loyalty among customers and encouraging repeat business engagements.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Implemented a reporting framework utilizing Google My Maps for the sales team. Generated weekly geographical coverage reports at various levels (individual, state, and country) to pinpoint areas for potential business enhancements, which was particularly valuable prior to the integration of Repsly into Lycamobile operations.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Utilized an array of data manipulation functions on a daily basis to generate comprehensive sales reports, aiding in the comprehension and enhancement of sales data and outcomes.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Delivered exceptional customer service to both internal and external stakeholders, promptly addressing inquiries and effectively resolving issues, resulting in heightened customer satisfaction and retention rates.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Provided support to customers navigating online orders, billing concerns, and account-related issues, ensuring their contentment and continued partnership.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Executed troubleshooting protocols for data and voice-related concerns over the phone, adeptly identifying problems and achieving first-call resolutions. This approach notably improved overall efficiency and productivity.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Collected customer and technology data to gauge the required technical support level. Collaborated effectively with the appropriate support level to expedite issue resolution, maintaining ownership of the problem and ensuring timely solutions.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Recognized recurring issue patterns and offered insights to development teams, leading to process enhancements and a reduction in future issues.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Actively engaged in the installation, support, and maintenance of our business systems, guaranteeing their proper operation and minimizing system downtime.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Collaborated closely with cross-functional teams to gather user feedback and enhance the user experience of digital systems, ultimately driving up user satisfaction and system adoption rates.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Facilitated the training of new employees and team members in the effective utilization of digital systems and customer support techniques, contributing to heightened team efficiency and productivity.</span></li></ul><p><br></p><p><strong style=\"font-size: 18px;\">LYCAMOBILE AUSTRALIA – SALES REPRESENTATIVE</strong></p><p><strong style=\"font-size: 18px;\">TENURE: 01/2016 – 12/2016</strong></p><ul><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Successfully sourced new sales opportunities through inbound lead follow-up and outbound cold calls and emails, resulting in increased revenue and customer base.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Demonstrated a deep understanding of customer needs and requirements, resulting in tailored solutions and increased customer satisfaction.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Routed qualified opportunities to the appropriate sales executives for further development and closure, resulting in improved sales outcomes.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Consistently delivered sales outcomes aligned with monthly targets, resulting in meeting and exceeding sales goals.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Developed and maintained a database of prospects within the assigned territory, resulting in improved pipeline and increased sales opportunities.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Monitored product sell-through rates and maintained retail partner stock levels, resulting in improved product availability and customer satisfaction.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Built and maintained strong relationships with clients by delivering exceptional service, resulting in increased customer loyalty and repeat business.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Supported customers on behalf of retail partners by answering product questions and resolving issues, resulting in increased customer satisfaction and retention.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Optimized shop merchandising and branding, ensuring optimum brand visibility in stores, resulting in improved product awareness and increased sales.</span></li></ul>"
+              },
+              "componentName" : "forceCommunity:richTextInline",
+              "id" : "f5515202-0570-44ce-9f8d-aea31629b231",
+              "renderPriority" : "NEUTRAL",
+              "renditionMap" : { },
+              "type" : "component"
+            } ],
+            "id" : "d00eb231-001a-4bcb-9f00-d26831a811d2",
+            "regionLabel" : "Experience",
+            "regionName" : "2",
+            "renditionMap" : { },
+            "type" : "region"
+          }, {
+            "components" : [ {
+              "componentAttributes" : {
+                "richTextValue" : "<p><strong style=\"font-size: 24px;\">BOOTCAMP :</strong></p><p><br></p><p><strong style=\"font-size: 18px;\">GOANNA EDUCATION AUSTRALIA – SALESFORCE ADMINISTRATOR HANDS-ON EXPERIENCE</strong></p><p style=\"text-align: justify;\"><strong style=\"font-size: 18px;\">TENURE: 11/2022 – 02/2023</strong></p><ul><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Gained a solid understanding of the Salesforce platform, its features, and capabilities, and how it can be customized to meet the needs of an organization.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Learned to create and manage users, assign roles and profiles, and set up permissions and access co﻿ntrol.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Understood how to secure data and maintain the confidentiality and integrity of information, including setting up security controls, managing user access, and monitoring user activity.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Learned to create and manage records, import, and export data, and maintain data quality.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Gained expertise in automating business processes and workflows using Salesforce automation tools such as Process Builder, Flow, and Workflow Rules.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Learned to create reports and dashboards and use Salesforce's powerful analytics capabilities to gain insights and drive data-driven decision making.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Gained experience in working collaboratively with peers, sharing knowledge and expertise to solve complex problems.</span></li><li style=\"text-align: justify;\"><span style=\"font-size: 16px; color: rgb(34, 34, 34);\">Projects: </span></li></ul><p style=\"text-align: justify;\"><span style=\"font-size: 16px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style=\"font-size: 16px; color: rgb(34, 34, 34);\">Designed a travel app</span></p><ol><li class=\"ql-indent-1\" style=\"text-align: justify;\"><span style=\"font-size: 16px; color: rgb(34, 34, 34);\">Developed a comprehensive data model tailored for the travel industry, incorporating relevant objects and relationships.</span></li><li class=\"ql-indent-1\" style=\"text-align: justify;\"><span style=\"font-size: 16px; color: rgb(34, 34, 34);\">Customized the UI to provide an intuitive user experience, aligning with travel-specific user needs.</span></li><li class=\"ql-indent-1\" style=\"text-align: justify;\"><span style=\"font-size: 16px; color: rgb(34, 34, 34);\">Enhanced data quality and security, implementing validation rules and field-level security.</span></li><li class=\"ql-indent-1\" style=\"text-align: justify;\"><span style=\"font-size: 16px; color: rgb(34, 34, 34);\">Automated key business processes, such as booking confirmations and itinerary updates, to improve operational efficiency.</span></li><li class=\"ql-indent-1\" style=\"text-align: justify;\"><span style=\"font-size: 16px; color: rgb(34, 34, 34);\">Ensured compliance with industry data governance standards, optimizing access controls to secure sensitive travel information.</span></li></ol><p style=\"text-align: justify;\"><span style=\"font-size: 16px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style=\"font-size: 16px; color: rgb(34, 34, 34);\">Designed a recruiting app </span></p><ol><li class=\"ql-indent-1\" style=\"text-align: justify;\"><span style=\"font-size: 16px; color: rgb(34, 34, 34);\">Designed and implemented a comprehensive data model and custom UI in sandbox environment.</span></li><li class=\"ql-indent-1\" style=\"text-align: justify;\"><span style=\"font-size: 16px; color: rgb(34, 34, 34);\">Enhanced data quality and security through rigorous validation and field-level security measures.</span></li><li class=\"ql-indent-1\" style=\"text-align: justify;\"><span style=\"font-size: 16px; color: rgb(34, 34, 34);\">Automated key business processes, improving operational efficiency and user experience.</span></li><li class=\"ql-indent-1\" style=\"text-align: justify;\"><span style=\"font-size: 16px; color: rgb(34, 34, 34);\">Ensured compliance with data governance standards and streamlined access controls.</span></li><li class=\"ql-indent-1\" style=\"text-align: justify;\"><span style=\"font-size: 16px; color: rgb(34, 34, 34);\">Deployed the app using change sets, facilitating smooth transitions to production environments.</span></li></ol>"
+              },
+              "componentName" : "forceCommunity:richTextInline",
+              "id" : "4d949418-ed57-4fad-bd15-6c40a1432e0b",
+              "renderPriority" : "NEUTRAL",
+              "renditionMap" : { },
+              "type" : "component"
+            } ],
+            "id" : "0d40edf1-a76b-4ee4-b021-54d6a36ddf6b",
+            "regionLabel" : "Bootcamp",
+            "regionName" : "1",
+            "renditionMap" : { },
+            "type" : "region"
+          } ],
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "97ca15ca-f2f5-46c9-ab4a-b545b5cf31cd",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "c014ee08-ef54-49a4-a2d2-389125f1c08e",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Experience"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "dd671202-cb7a-4872-a61c-2b596753704c",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "c3b81f26-1ee5-4532-8822-be415fa4b478",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-experience"
+}

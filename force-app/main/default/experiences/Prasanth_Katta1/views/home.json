@@ -1,0 +1,77 @@
+{
+  "appPageId" : "42cbb778-54b7-439f-b9e8-287163265203",
+  "componentName" : "siteforce:sldsTwoCol84Layout",
+  "dataProviders" : [ ],
+  "id" : "0d8537f1-e410-4367-9001-85fab435bf56",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "bannerBackgroundColor" : "rgba(51, 92, 110, 0.43)",
+        "bannerPosition" : "top",
+        "bannerSizePercent" : 30,
+        "borderRadius" : 30,
+        "boxShadow" : true,
+        "haveBanner" : false,
+        "iconBackgroundColor" : "rgb(45, 53, 57)",
+        "iconSize" : "small",
+        "noImageColor" : "rgb(205, 227, 232)",
+        "overlay" : "rgba(0,0,0,0.01)",
+        "templateType" : "icon",
+        "tileMenuEditor" : "Default_Navigation",
+        "titleColor" : "rgb(252, 252, 252)",
+        "titleFontSize" : "large",
+        "titleHorizontalAlign" : "center"
+      },
+      "componentName" : "community_navigation:tileMenu",
+      "id" : "c91a194c-7de7-480a-92cb-a140fd57e6c6",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : {
+        "small" : "de1cd968-8f93-40e0-8466-ecd9f94e6436"
+      },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "richTextValue" : "<h1><br></h1>\n<h1 style=\"text-align: center;\"><strong style=\"font-size: 26px;\">Let's Connect!</strong><span style=\"font-size: 26px;\">&nbsp;</span>&nbsp;&nbsp;&nbsp;</h1>\n<h1 style=\"text-align: center;\">&nbsp;<a href=\"https://www.salesforce.com/trailblazer/pkatta15\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--slds-g-color-neutral-base-10, var(--lwc-colorTextDefault,rgb(255, 255, 255))); background-color: var(--lwc-colorPageBackground,rgb(51, 101, 84)); font-size: 16px;\"><img class=\"sfdcCbImage\" alt=\"\" src=\"{!contentAsset.logo_trailhead.1}\" style=\"width: 87.8021px; height: 74.6042px;\"></a><span style=\"font-size: 16px;\">&nbsp;</span><a href=\"//www.linkedin.com/in/prasanthkatta\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--slds-g-color-neutral-base-10, var(--lwc-colorTextDefault,rgba(0, 0, 0, 0.8))); background-color: transparent; font-size: 16px;\"><img class=\"sfdcCbImage\" alt=\"\" src=\"{!contentAsset.icons8linkedin4801.1}\" style=\"width: 88.3958px; height: 88.3958px;\"></a><a href=\"mailto:prasanthkatta@hotmail.com\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--slds-g-color-neutral-base-10, var(--lwc-colorTextDefault,rgba(0, 0, 0, 0.8))); background-color: transparent; font-size: 16px;\"><img class=\"sfdcCbImage\" alt=\"\" src=\"{!contentAsset.icons8microsoftoutlook480.1}\" style=\"width: 87.4583px; height: 87.4583px;\"></a><span style=\"color: var(--slds-g-color-neutral-base-10, var(--lwc-colorTextDefault,rgba(0, 0, 0, 0.8))); background-color: transparent; font-size: 16px;\">&nbsp;</span></h1>\n<p><br></p>\n<p>&nbsp;</p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "480953ca-ac9f-4f7e-a88b-f2c6939b2d32",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "e764485e-99d3-47a3-ad4b-2ed1a4138ba8",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "13f22317-24c1-4147-9ce0-b3747bf062b4",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "a074a8ce-1095-457e-ba1c-5f2d58bef730",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "id" : "05d183eb-6d8c-48cb-885b-4f4dc676d19f",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "b48edb76-e64f-42fe-9e24-01a393e03c8b",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "9d5de30d-7357-4e2e-a348-99d709132f3f",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Home",
+  "type" : "view",
+  "viewType" : "home"
+}

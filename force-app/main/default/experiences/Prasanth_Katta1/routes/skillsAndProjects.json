@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "9a6f4e87-557b-4cc7-86a5-2ebac053c201",
+  "appPageId" : "42cbb778-54b7-439f-b9e8-287163265203",
+  "configurationTags" : [ ],
+  "devName" : "Skills_and_Projects__c",
+  "id" : "69fb6ade-7815-466e-8eb9-8da67ca4c1a2",
+  "label" : "Skills and Projects",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-skills-and-projects",
+  "type" : "route",
+  "urlPrefix" : "skills-and-projects"
+}
